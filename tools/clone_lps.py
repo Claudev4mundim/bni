@@ -13,6 +13,9 @@ Uso:
     python3 tools/clone_lps.py                 # clona todas as páginas
     python3 tools/clone_lps.py lp-dex lp-rmkt  # clona só as páginas indicadas
     python3 tools/clone_lps.py --missing lista.txt  # baixa assets listados (um caminho por linha)
+
+Depois de clonar, roda tools/localize_elementor_chunks.py para trazer os chunks
+que o Elementor carrega sob demanda.
 """
 from __future__ import annotations
 
@@ -230,6 +233,12 @@ def main(argv: list[str]) -> int:
             if wanted and page["slug"] not in wanted and page["source"].strip("/") not in wanted:
                 continue
             clone_page(page)
+        # O Elementor carrega chunks sob demanda a partir de
+        # elementorFrontendConfig.urls.assets; este passo baixa esses chunks e
+        # torna essa URL relativa, para nada mais vir do site original.
+        import subprocess
+        subprocess.run([sys.executable, os.path.join(ROOT, "tools", "localize_elementor_chunks.py"), ROOT],
+                       check=True)
     if _failed:
         print("\nFalhas:", *_failed, sep="\n  ")
     return 0
