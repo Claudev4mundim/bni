@@ -34,7 +34,9 @@ S3/CloudFront), tanto na raiz de um domínio quanto num subcaminho.
   `next.config.ts` dele). O visitante vê o endereço do `pages.bnibrasil.com.br`.
   Para uma LP nova aparecer lá, além de publicá-la aqui, o slug precisa entrar
   na lista `LPS` do `next.config.ts` do `bni-lp`.
-- O índice (`index.html`) não é repassado: ele só existe no `lps-bni.vercel.app`.
+- O índice (`index.html`) aparece em `pages.bnibrasil.com.br/index`; os
+  cartões mostram os endereços do `pages.bnibrasil.com.br` e os links são
+  relativos, então funcionam nos dois domínios.
 
 ## Estrutura
 
