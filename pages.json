@@ -1,0 +1,369 @@
+{
+  "origin": "https://landing.bnibrasil.com.br",
+  "inventory_date": "04/11/2026",
+  "groups": [
+    {
+      "name": "Agende sua visita",
+      "pages": [
+        {
+          "id": 335480,
+          "title": "Regional – Paraíba",
+          "source": "/lp-agende-sua-visita-regional-paraiba/",
+          "slug": "lp-agende-sua-visita-regional-paraiba",
+          "modified": "07/08/2026"
+        },
+        {
+          "id": 335466,
+          "title": "Regional – Pernambuco",
+          "source": "/lp-agende-sua-visita-regional-pernambuco/",
+          "slug": "lp-agende-sua-visita-regional-pernambuco",
+          "modified": "07/08/2026"
+        },
+        {
+          "id": 281239,
+          "title": "Regional – Triângulo Mineiro",
+          "source": "/lp-regional-triminieiro/",
+          "slug": "lp-regional-triminieiro",
+          "modified": "02/06/2026"
+        },
+        {
+          "id": 281591,
+          "title": "Regional – SP Central",
+          "source": "/lp-regional-spcentral/",
+          "slug": "lp-regional-spcentral",
+          "modified": "02/06/2026"
+        },
+        {
+          "id": 281561,
+          "title": "Regional – Norte Fluminense",
+          "source": "/lp-regional-nortefluminense/",
+          "slug": "lp-regional-nortefluminense",
+          "modified": "02/06/2026"
+        },
+        {
+          "id": 281573,
+          "title": "Regional – Noroeste Paulista",
+          "source": "/lp-regional-altanoroestepaulista/",
+          "slug": "lp-regional-altanoroestepaulista",
+          "modified": "02/06/2026"
+        },
+        {
+          "id": 281549,
+          "title": "Regional – RGS Sudeste",
+          "source": "/lp-regional-rgssudeste/",
+          "slug": "lp-regional-rgssudeste",
+          "modified": "02/06/2026"
+        },
+        {
+          "id": 281543,
+          "title": "Regional – Teresina",
+          "source": "/lp-regional-teresina/",
+          "slug": "lp-regional-teresina",
+          "modified": "02/06/2026"
+        },
+        {
+          "id": 281498,
+          "title": "Regional – Belém",
+          "source": "/lp-regional-belem/",
+          "slug": "lp-regional-belem",
+          "modified": "02/06/2026"
+        },
+        {
+          "id": 281317,
+          "title": "Regional – Porto Alegre Oeste",
+          "source": "/lp-regional-rgsportoalegreoeste/",
+          "slug": "lp-regional-rgsportoalegreoeste",
+          "modified": "02/06/2026"
+        },
+        {
+          "id": 58496,
+          "title": "Regiões",
+          "source": "/lp-agende-sua-visita-regioes/",
+          "slug": "lp-agende-sua-visita-regioes",
+          "modified": "02/06/2026"
+        },
+        {
+          "id": 23345,
+          "title": "Triângulo Mineiro",
+          "source": "/lp-agende-sua-visita-triangulo-mineiro/",
+          "slug": "lp-agende-sua-visita-triangulo-mineiro",
+          "modified": "02/06/2026"
+        },
+        {
+          "id": 72781,
+          "title": "Form HTML",
+          "source": "/lp-agende-sua-visita-form-html/",
+          "slug": "lp-agende-sua-visita-form-html",
+          "modified": "07/04/2026"
+        },
+        {
+          "id": 6898,
+          "title": "Form",
+          "source": "/lp-agende-sua-visita-form/",
+          "slug": "lp-agende-sua-visita-form",
+          "modified": "09/03/2026"
+        },
+        {
+          "id": 182,
+          "title": "Agende sua visita",
+          "source": "/lp-agende-sua-visita/",
+          "slug": "lp-agende-sua-visita",
+          "modified": "09/03/2026"
+        }
+      ]
+    },
+    {
+      "name": "DEX",
+      "pages": [
+        {
+          "id": 335378,
+          "title": "LP – Dex (base)",
+          "source": "/lp-dex-base/",
+          "slug": "lp-dex-base",
+          "modified": "27/07/2026"
+        },
+        {
+          "id": 335336,
+          "title": "LP DEX PROJETO 2026",
+          "source": "/lp-dex-projeto-2026/",
+          "slug": "lp-dex-projeto-2026",
+          "modified": "16/07/2026"
+        },
+        {
+          "id": 335316,
+          "title": "LP Dex",
+          "source": "/lp-dex/",
+          "slug": "lp-dex",
+          "modified": "02/07/2026"
+        }
+      ]
+    },
+    {
+      "name": "Networking",
+      "pages": [
+        {
+          "id": 744,
+          "title": "Networking – Meta",
+          "source": "/lp-networking-meta/",
+          "slug": "lp-networking-meta",
+          "modified": "02/03/2026"
+        },
+        {
+          "id": 1721,
+          "title": "Networking – LinkedIn",
+          "source": "/lp-networking-linkedin/",
+          "slug": "lp-networking-linkedin",
+          "modified": "02/03/2026"
+        },
+        {
+          "id": 313,
+          "title": "Networking",
+          "source": "/lp-networking/",
+          "slug": "lp-networking",
+          "modified": "02/03/2026"
+        },
+        {
+          "id": 742,
+          "title": "Networking – Google",
+          "source": "/lp-networking-google/",
+          "slug": "lp-networking-google",
+          "modified": "02/03/2026"
+        },
+        {
+          "id": 1724,
+          "title": "Networking – Orgânico",
+          "source": "/lp-networking-organico/",
+          "slug": "lp-networking-organico",
+          "modified": "13/01/2026"
+        },
+        {
+          "id": 1789,
+          "title": "Networking – Meta – São Carlos",
+          "source": "/lp-networking-meta-sao-carlos/",
+          "slug": "lp-networking-meta-sao-carlos",
+          "modified": "13/01/2026"
+        }
+      ]
+    },
+    {
+      "name": "Outras LPs",
+      "pages": [
+        {
+          "id": 223,
+          "title": "LP – Franquias",
+          "source": "/lp-franquias/",
+          "slug": "lp-franquias",
+          "modified": "02/03/2026"
+        },
+        {
+          "id": 273,
+          "title": "LP – Soluções",
+          "source": "/lp-solucoes/",
+          "slug": "lp-solucoes",
+          "modified": "13/01/2026"
+        },
+        {
+          "id": 67990,
+          "title": "LP – Profissões",
+          "source": "/lp-profissoes/",
+          "slug": "lp-profissoes",
+          "modified": "09/01/2026"
+        },
+        {
+          "id": 67885,
+          "title": "LP – Remarketing",
+          "source": "/lp-rmkt/",
+          "slug": "lp-rmkt",
+          "modified": "09/01/2026"
+        },
+        {
+          "id": 54797,
+          "title": "LP – Social – SP",
+          "source": "/lp-social-sp/",
+          "slug": "lp-social-sp",
+          "modified": "09/12/2025"
+        },
+        {
+          "id": 354,
+          "title": "LP – Uploads",
+          "source": "/lp-uploads/",
+          "slug": "lp-uploads",
+          "modified": "23/07/2025"
+        }
+      ]
+    },
+    {
+      "name": "Coleta CX e Onboarding",
+      "pages": [
+        {
+          "id": 55201,
+          "title": "Coleta – CX – Mês 3",
+          "source": "/coleta-cx-mes-3/",
+          "slug": "coleta-cx-mes-3",
+          "modified": "08/09/2026"
+        },
+        {
+          "id": 33281,
+          "title": "Onboarding novos DEX",
+          "source": "/onboarding-novos-dex/",
+          "slug": "onboarding-novos-dex",
+          "modified": "06/08/2026"
+        },
+        {
+          "id": 54826,
+          "title": "Coleta – CX – Mês 1",
+          "source": "/coleta-cx-mes-1/",
+          "slug": "coleta-cx-mes-1",
+          "modified": "13/07/2026"
+        },
+        {
+          "id": 19089,
+          "title": "Onboarding",
+          "source": "/onboarding/",
+          "slug": "onboarding",
+          "modified": "04/05/2026"
+        },
+        {
+          "id": 54862,
+          "title": "Coleta – CX – Mês 2",
+          "source": "/coleta-cx-mes-2/",
+          "slug": "coleta-cx-mes-2",
+          "modified": "09/12/2025"
+        }
+      ]
+    },
+    {
+      "name": "Home e diversas",
+      "pages": [
+        {
+          "id": 91,
+          "title": "power team (página inicial do site original)",
+          "source": "/",
+          "slug": "power-team",
+          "modified": "24/08/2026"
+        },
+        {
+          "id": 26666,
+          "title": "BNI Lead Manager",
+          "source": "/bni-lead-manager/",
+          "slug": "bni-lead-manager",
+          "modified": "03/11/2025"
+        },
+        {
+          "id": 14,
+          "title": "bnisp01",
+          "source": "/bnisp01/",
+          "slug": "bnisp01",
+          "modified": "14/10/2025"
+        },
+        {
+          "id": 27707,
+          "title": "Elementor #27707",
+          "source": "/elementor-27707/",
+          "slug": "elementor-27707",
+          "modified": "03/10/2025"
+        },
+        {
+          "id": 57,
+          "title": "confirmacao de mensagem",
+          "source": "/confirmacao-de-mensagem/",
+          "slug": "confirmacao-de-mensagem",
+          "modified": "27/08/2025"
+        },
+        {
+          "id": 120,
+          "title": "rafa1",
+          "source": "/rafa1/",
+          "slug": "rafa1",
+          "modified": "24/06/2025"
+        },
+        {
+          "id": 109,
+          "title": "especialdenatal",
+          "source": "/especialdenatal/",
+          "slug": "especialdenatal",
+          "modified": "20/06/2025"
+        },
+        {
+          "id": 93,
+          "title": "v401",
+          "source": "/v401/",
+          "slug": "v401",
+          "modified": "03/06/2025"
+        }
+      ]
+    }
+  ],
+  "not_cloned": [
+    {
+      "id": 21826,
+      "title": "Home",
+      "reason": "Rascunho sem URL pública"
+    },
+    {
+      "id": 130,
+      "title": "Política de reembolso e devoluções",
+      "reason": "Rascunho sem URL pública"
+    },
+    {
+      "id": 126,
+      "title": "Loja",
+      "reason": "Página de sistema do WooCommerce (dinâmica, não é LP)"
+    },
+    {
+      "id": 127,
+      "title": "Carrinho",
+      "reason": "Página de sistema do WooCommerce (dinâmica, não é LP)"
+    },
+    {
+      "id": 128,
+      "title": "Finalização de compra",
+      "reason": "Página de sistema do WooCommerce (dinâmica, não é LP)"
+    },
+    {
+      "id": 129,
+      "title": "Minha conta",
+      "reason": "Página de sistema do WooCommerce (dinâmica, não é LP)"
+    }
+  ]
+}
