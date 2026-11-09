@@ -2,9 +2,14 @@
 """Clona as landing pages de landing.bnibrasil.com.br para este repositório.
 
 Cada página vira um subdiretório (``/<slug>/index.html``) e todos os arquivos
-estáticos (CSS, JS, imagens, fontes, vídeos) são baixados para ``/wp-content`` e
-``/wp-includes`` mantendo os caminhos originais, de modo que as referências
-relativas dentro dos CSS continuem funcionando. As URLs que apontam para o site
+estáticos (CSS, JS, imagens, fontes, vídeos) são baixados para ``/lp-assets``:
+``wp-content/...`` do original vira ``lp-assets/content/...`` e ``wp-includes/...``
+vira ``lp-assets/includes/...``. A estrutura interna das pastas é mantida, de modo
+que as referências relativas dentro dos CSS continuem funcionando.
+
+Os nomes ``wp-content`` e ``wp-includes`` não podem aparecer nas URLs: o firewall
+da Vercel em pages.bnibrasil.com.br bloqueia (403) qualquer caminho que os
+contenha, assim como qualquer caminho terminado em ``.php``. As URLs que apontam para o site
 original são reescritas como caminhos relativos; endpoints de backend do
 WordPress (admin-ajax, wp-json, wp-login...) continuam apontando para o site
 original porque não existem numa hospedagem estática.
@@ -42,6 +47,8 @@ PAGES = [p for group in CATALOG["groups"] for p in group["pages"] if p.get("sour
 SLUG_MAP = {p["source"].strip("/"): p["slug"] for p in PAGES}
 
 ASSET_PREFIXES = ("wp-content/", "wp-includes/")
+# Pasta do WordPress -> pasta no repositório (sem "wp-content"/"wp-includes").
+LOCAL_DIRS = {"wp-content/": "lp-assets/content/", "wp-includes/": "lp-assets/includes/"}
 # Endpoints dinâmicos do WordPress: mantidos absolutos (apontando para o original).
 BACKEND_PREFIXES = ("wp-admin", "wp-json", "wp-login.php", "xmlrpc.php", "wp-cron.php",
                     "feed", "comments/feed", "wp-comments-post.php")
@@ -63,9 +70,41 @@ ACTION_RE = re.compile(r"""(action=["'])(/[^"']*)(["'])""")
 CSS_URL_RE = re.compile(r"""url\(\s*(['"]?)([^'")]+)\1\s*\)|@import\s+(['"])([^'"]+)\3""")
 
 
+# "wp-content"/"wp-includes" também aparecem no meio de alguns caminhos: o WP
+# Rocket guarda os CSS minificados em wp-content/cache/min/<n>/wp-content/...
+# e o TinyMCE tem um skins/wordpress/wp-content.css. Nesses casos o nome vira
+# "wpcontent"/"wpincludes" (o firewall não bloqueia). O número de segmentos
+# não muda, então os url(../../..) relativos dos CSS seguem resolvendo certo.
+_INNER = (("wp-content", "wpcontent"), ("wp-includes", "wpincludes"))
+
+
+def local_path(url_path: str) -> str:
+    """Path de URL no site original -> path de URL na cópia (/lp-assets/...)."""
+    p = url_path.lstrip("/")
+    for src, dst in LOCAL_DIRS.items():
+        if p.startswith(src):
+            rest = p[len(src):]
+            for a, b in _INNER:
+                rest = rest.replace(a, b)
+            return "/" + dst + rest
+    return "/" + p
+
+
+def origin_path(path: str) -> str:
+    """Inverso de local_path: aceita tanto /lp-assets/... quanto /wp-...."""
+    p = path.lstrip("/")
+    for src, dst in LOCAL_DIRS.items():
+        if p.startswith(dst):
+            rest = p[len(dst):]
+            for a, b in _INNER:
+                rest = rest.replace(b, a)
+            return "/" + src + rest
+    return "/" + p
+
+
 def local_file(url_path: str) -> str:
-    """Caminho no disco para um path de URL (sem query), decodificando %xx."""
-    return os.path.join(ROOT, urllib.parse.unquote(url_path.lstrip("/")))
+    """Caminho no disco para um path de URL do original (sem query), decodificando %xx."""
+    return os.path.join(ROOT, urllib.parse.unquote(local_path(url_path).lstrip("/")))
 
 
 def is_asset(path: str) -> bool:
@@ -79,8 +118,8 @@ def is_backend(path: str) -> bool:
 
 
 def fetch_asset(url_path: str) -> None:
-    """Baixa um asset (path começando com /wp-...) se ainda não existe."""
-    url_path = "/" + url_path.lstrip("/")
+    """Baixa um asset (path do original, /wp-..., ou da cópia, /lp-assets/...) se ainda não existe."""
+    url_path = origin_path(url_path)
     with _lock:
         if url_path in _seen:
             return
@@ -127,9 +166,10 @@ def process_text_asset(url_path: str, dest: str) -> None:
 
 
 def rel(target: str, from_url_path: str) -> str:
-    """Caminho relativo de um documento (from_url_path) até target (path de URL)."""
-    from_dir = posixpath.dirname(from_url_path)
-    r = posixpath.relpath("/" + target.lstrip("/"), from_dir)
+    """Caminho relativo de um documento até target. Os dois são paths de URL do
+    site original; os assets são convertidos para a pasta local (lp-assets)."""
+    from_dir = posixpath.dirname(local_path(from_url_path))
+    r = posixpath.relpath(local_path(target), from_dir)
     if target.endswith("/") and not r.endswith("/"):
         r += "/"
     return r
@@ -175,6 +215,11 @@ def rewrite(text: str, doc_path: str, deps: set[str]) -> str:
 
     def sub_rootrel(m: re.Match) -> str:
         path, tail = split_path(html.unescape(m.group("path")))
+        if "*" in path:  # padrão (ex.: regras de prefetch), não é um arquivo
+            return m.group(0)
+        if not is_asset(path):  # diretório (ex.: pluginPath do MediaElement)
+            d = path if path.endswith("/") else path + "/"
+            return m.group("pre") + rel(d, doc_path) + tail
         if is_asset(path):
             deps.add(path)
             frag = tail[tail.index("#"):] if "#" in tail else ""

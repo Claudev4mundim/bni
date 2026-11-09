@@ -12,7 +12,7 @@ with open(os.path.join(ROOT, "pages.json"), encoding="utf-8") as fh:
     CATALOG = json.load(fh)
 
 ORIGIN = CATALOG["origin"]
-LOGO = "wp-content/uploads/2025/06/favicon-bnidf.png"
+LOGO = "lp-assets/content/uploads/2025/06/favicon-bnidf.png"
 
 
 def esc(s: str) -> str:

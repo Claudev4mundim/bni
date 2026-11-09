@@ -9,13 +9,32 @@ inventário "Páginas – landing.bnibrasil.com.br" (04/11/2026).
   `/lp-networking-meta/`, `/lp-regional-belem/`, `/coleta-cx-mes-1/`, etc.
   A página inicial do site original ("power team") está em `/power-team/`.
 - **Arquivos compartilhados** (CSS, JS, imagens, fontes, vídeos) ficam em
-  `/wp-content/` e `/wp-includes/`, com os mesmos caminhos do WordPress. Assim as
-  referências relativas dentro dos CSS continuam funcionando e cada arquivo é
-  guardado uma vez só, mesmo quando várias LPs o usam.
+  `/lp-assets/`: o `wp-content/` do WordPress virou `lp-assets/content/` e o
+  `wp-includes/` virou `lp-assets/includes/`, com a mesma estrutura interna.
+  Assim as referências relativas dentro dos CSS continuam funcionando e cada
+  arquivo é guardado uma vez só, mesmo quando várias LPs o usam.
 
-Todos os links internos são relativos (`../wp-content/...`, `../lp-dex/`). O site
+Todos os links internos são relativos (`../lp-assets/...`, `../lp-dex/`). O site
 funciona em qualquer hospedagem estática (Vercel, Netlify, GitHub Pages,
 S3/CloudFront), tanto na raiz de um domínio quanto num subcaminho.
+
+> **Por que não `wp-content`?** O firewall da Vercel em `pages.bnibrasil.com.br`
+> bloqueia (403) qualquer caminho que contenha `wp-content`, `wp-includes` ou
+> termine em `.php`. Por isso nenhuma URL da cópia usa esses nomes; onde eles
+> aparecem no meio de um caminho (cache do WP Rocket, skin do TinyMCE), viram
+> `wpcontent`/`wpincludes`. O `tools/clone_lps.py` faz essa conversão sozinho.
+
+## Publicação
+
+- **lps-bni.vercel.app:** projeto Vercel `bni` (time claudev4mundimprojects),
+  publica este repositório.
+- **pages.bnibrasil.com.br/<slug>:** o projeto `bni-lp` (repositório
+  `v4mundim-dotcom/bni-lp`, dono do domínio) repassa por proxy as URLs das LPs e
+  de `/lp-assets/` para o `lps-bni.vercel.app` (`rewrites` no
+  `next.config.ts` dele). O visitante vê o endereço do `pages.bnibrasil.com.br`.
+  Para uma LP nova aparecer lá, além de publicá-la aqui, o slug precisa entrar
+  na lista `LPS` do `next.config.ts` do `bni-lp`.
+- O índice (`index.html`) não é repassado: ele só existe no `lps-bni.vercel.app`.
 
 ## Estrutura
 
@@ -23,8 +42,8 @@ S3/CloudFront), tanto na raiz de um domínio quanto num subcaminho.
 index.html            LP base (gerada por tools/build_index.py)
 pages.json            catálogo: grupo, ID, título, URL original, slug, data
 <slug>/index.html     uma pasta por landing page (43)
-wp-content/           assets baixados do site original
-wp-includes/          assets do core do WordPress (jQuery etc.)
+lp-assets/content/    assets do wp-content do site original
+lp-assets/includes/   assets do wp-includes (jQuery etc.)
 tools/clone_lps.py    clonador (baixa as páginas e reescreve URLs)
 tools/build_index.py  gera a LP base a partir do pages.json
 ```
