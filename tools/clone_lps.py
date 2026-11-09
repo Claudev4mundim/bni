@@ -14,10 +14,18 @@ original são reescritas como caminhos relativos; endpoints de backend do
 WordPress (admin-ajax, wp-json, wp-login...) continuam apontando para o site
 original porque não existem numa hospedagem estática.
 
+Os endereços públicos da página (canonical, og:url, og:image, shortlink, o
+campo page_url dos formulários e o JSON-LD) saem absolutos, em
+https://pages.bnibrasil.com.br/<slug>. Relativos, eles quebravam lá: o domínio
+serve a LP em /<slug> (sem barra final), então "./" apontava para a página
+principal do domínio, e robôs de busca e redes sociais não resolvem endereço
+relativo em og:image nem em JSON-LD.
+
 Uso:
     python3 tools/clone_lps.py                 # clona todas as páginas
     python3 tools/clone_lps.py lp-dex lp-rmkt  # clona só as páginas indicadas
     python3 tools/clone_lps.py --missing lista.txt  # baixa assets listados (um caminho por linha)
+    python3 tools/clone_lps.py --public-urls   # só refaz os endereços públicos das cópias
 """
 from __future__ import annotations
 
@@ -35,6 +43,8 @@ import requests
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ORIGIN = "https://landing.bnibrasil.com.br"
+# Onde as LPs são publicadas (proxy do projeto bni-lp para lps-bni.vercel.app).
+PUBLIC_ORIGIN = "https://pages.bnibrasil.com.br"
 HOST = "landing.bnibrasil.com.br"
 UA = ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/120.0 Safari/537.36")
@@ -240,6 +250,66 @@ def rewrite(text: str, doc_path: str, deps: set[str]) -> str:
     return text
 
 
+# Relativo ("./", "../lp-assets/..."), puro ou com a barra escapada do JSON.
+_REL = r"\.\.?(?:/|\\/)"
+# Tags cujo endereço é lido fora da página (buscadores, redes sociais, backend).
+PUBLIC_TAG_RE = re.compile(
+    r"<(?:link\b[^>]*\brel=[\"'](?:canonical|shortlink)[\"']"
+    r"|meta\b[^>]*\b(?:property|name)=[\"'](?:og:url|og:image(?::secure_url)?|twitter:image)[\"']"
+    r"|input\b[^>]*\bname=[\"']page_url[\"'])[^>]*>",
+    re.I,
+)
+PUBLIC_ATTR_RE = re.compile(r"""(\b(?:href|content|value)=)(["'])(""" + _REL + r"""[^"']*)\2""", re.I)
+JSONLD_RE = re.compile(
+    r"(<script\b[^>]*type=[\"']application/ld\+json[\"'][^>]*>)(.*?)(</script>)", re.I | re.S
+)
+JSON_REL_RE = re.compile(r'"(' + _REL + r'[^"]*)"')
+
+
+def public_url(ref: str, slug: str) -> str:
+    """Endereço relativo escrito em /<slug>/index.html -> absoluto no domínio público.
+    Páginas saem sem a barra final, que é como o domínio as serve."""
+    absu = urllib.parse.urljoin(f"{PUBLIC_ORIGIN}/{slug}/", html.unescape(ref))
+    parts = urllib.parse.urlsplit(absu)
+    path = parts.path
+    if path != "/" and path.endswith("/"):
+        path = path[:-1]
+    return urllib.parse.urlunsplit(parts._replace(path=path))
+
+
+def public_urls(text: str, slug: str) -> str:
+    """Troca por absolutos os endereços relativos que são lidos fora da página."""
+
+    def attr(m: re.Match) -> str:
+        return f"{m.group(1)}{m.group(2)}{html.escape(public_url(m.group(3), slug), quote=True)}{m.group(2)}"
+
+    def json_value(m: re.Match) -> str:
+        escaped = "\\/" in m.group(1)
+        url = public_url(m.group(1).replace("\\/", "/"), slug)
+        return '"' + (url.replace("/", "\\/") if escaped else url) + '"'
+
+    text = PUBLIC_TAG_RE.sub(lambda m: PUBLIC_ATTR_RE.sub(attr, m.group(0)), text)
+    return JSONLD_RE.sub(
+        lambda m: m.group(1) + JSON_REL_RE.sub(json_value, m.group(2)) + m.group(3), text
+    )
+
+
+def fix_public_urls() -> None:
+    """Aplica public_urls() às cópias que já estão no repositório."""
+    for page in PAGES:
+        dest = os.path.join(ROOT, page["slug"], "index.html")
+        if not os.path.exists(dest):
+            continue
+        # newline="": mantém as quebras de linha do arquivo (há CRLF no HTML).
+        with open(dest, encoding="utf-8", newline="") as fh:
+            text = fh.read()
+        new_text = public_urls(text, page["slug"])
+        if new_text != text:
+            with open(dest, "w", encoding="utf-8", newline="") as fh:
+                fh.write(new_text)
+            print(f"ok  /{page['slug']}/")
+
+
 def clone_page(page: dict) -> None:
     src = page["source"]
     url = ORIGIN + src
@@ -250,6 +320,7 @@ def clone_page(page: dict) -> None:
     doc_path = f"/{page['slug']}/index.html"
     deps: set[str] = set()
     text = rewrite(text, doc_path, deps)
+    text = public_urls(text, page["slug"])
     # Indica a origem da cópia (ajuda a manter o repositório em sincronia).
     text = text.replace(
         "<head>",
@@ -266,7 +337,9 @@ def clone_page(page: dict) -> None:
 
 
 def main(argv: list[str]) -> int:
-    if argv[:1] == ["--missing"]:
+    if argv[:1] == ["--public-urls"]:
+        fix_public_urls()
+    elif argv[:1] == ["--missing"]:
         with open(argv[1], encoding="utf-8") as fh:
             paths = [l.strip() for l in fh if l.strip()]
         with cf.ThreadPoolExecutor(max_workers=12) as ex:

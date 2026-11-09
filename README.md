@@ -29,19 +29,30 @@ S3/CloudFront), tanto na raiz de um domínio quanto num subcaminho.
 - **lps-bni.vercel.app:** projeto Vercel `bni` (time claudev4mundimprojects),
   publica este repositório.
 - **pages.bnibrasil.com.br/<slug>:** o projeto `bni-lp` (repositório
-  `v4mundim-dotcom/bni-lp`, dono do domínio) repassa por proxy as URLs das LPs e
-  de `/lp-assets/` para o `lps-bni.vercel.app` (`rewrites` no
-  `next.config.ts` dele). O visitante vê o endereço do `pages.bnibrasil.com.br`.
-  Para uma LP nova aparecer lá, além de publicá-la aqui, o slug precisa entrar
-  na lista `LPS` do `next.config.ts` do `bni-lp`.
+  `v4mundim-dotcom/bni-lp`, dono do domínio) repassa por proxy para o
+  `lps-bni.vercel.app` todo caminho que não é página dele (`rewrites` com
+  `fallback` no `next.config.ts`). O visitante vê o endereço do
+  `pages.bnibrasil.com.br`. **Uma LP nova publicada aqui aparece lá sozinha**,
+  sem mexer no `bni-lp`; só não pode usar um caminho que o `bni-lp` já usa
+  (`/`, `/visita`, `/api`, `/images`, `/videos`).
 - O índice (`index.html`) aparece em `pages.bnibrasil.com.br/index`; os
   cartões mostram os endereços do `pages.bnibrasil.com.br` e os links são
   relativos, então funcionam nos dois domínios.
+- **Tudo que é publicado aqui também aparece no domínio.** Por isso o
+  `.vercelignore` deixa de fora `tools/` e `pages.json`, e o `404.html` é a
+  página de erro dos dois endereços.
+- O domínio serve as LPs sem a barra final (`/lp-networking`). Por isso os
+  endereços lidos fora da página (`canonical`, `og:url`, `og:image`,
+  `page_url` dos formulários e o JSON-LD) são absolutos, em
+  `https://pages.bnibrasil.com.br/<slug>`: relativos, o `./` apontava para a
+  página principal do domínio. O `tools/clone_lps.py` já gera assim.
 
 ## Estrutura
 
 ```
 index.html            LP base (gerada por tools/build_index.py)
+404.html              página de erro (lps-bni.vercel.app e pages.bnibrasil.com.br)
+.vercelignore         o que não vai para o ar (tools/, pages.json)
 pages.json            catálogo: grupo, ID, título, URL original, slug, data
 <slug>/index.html     uma pasta por landing page (43)
 lp-assets/content/    assets do wp-content do site original
@@ -101,6 +112,7 @@ porém, só funcionam com um servidor e por isso continuam apontando para
 ```bash
 python3 tools/clone_lps.py                    # baixa todas as páginas de novo
 python3 tools/clone_lps.py lp-dex lp-rmkt      # só as páginas indicadas
+python3 tools/clone_lps.py --public-urls      # só refaz os endereços absolutos
 python3 tools/build_index.py                  # regenera a LP base
 ```
 

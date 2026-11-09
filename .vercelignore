@@ -1,0 +1,7 @@
+# Ferramentas e catálogo usados só para gerar as cópias. Não vão para o ar:
+# pages.bnibrasil.com.br repassa para cá qualquer caminho que não seja dele,
+# então tudo que é publicado aqui também aparece no domínio.
+tools/
+pages.json
+README.md
+.nojekyll
