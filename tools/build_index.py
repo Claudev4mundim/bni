@@ -13,20 +13,30 @@ with open(os.path.join(ROOT, "pages.json"), encoding="utf-8") as fh:
 
 ORIGIN = CATALOG["origin"]
 LOGO = "lp-assets/content/uploads/2025/06/favicon-bnidf.png"
+# Endereço público das LPs (o bni-lp repassa os slugs para este projeto).
+PUBLIC_HOST = "pages.bnibrasil.com.br"
 
 
 def esc(s: str) -> str:
     return html.escape(str(s), quote=True)
 
 
+def sem_travessao(s: str) -> str:
+    # Regra de texto do pages.bnibrasil.com.br: nada de travessões visíveis.
+    return s.replace("\u2014", "-").replace("\u2013", "-")
+
+
 def card(p: dict) -> str:
-    title = p["title"]
+    title = sem_travessao(p["title"])
     search = f"{title} {p['slug']} {p['id']}".lower()
+    # Link relativo e sem barra final: funciona em lps-bni.vercel.app/ e em
+    # pages.bnibrasil.com.br/index, e lá evita o 308 que o Next faz para
+    # tirar a barra.
     return f"""
         <li class="card" data-search="{esc(search)}">
-          <a class="card-main" href="{esc(p['slug'])}/">
+          <a class="card-main" href="{esc(p['slug'])}">
             <span class="card-title">{esc(title)}</span>
-            <span class="card-path">/{esc(p['slug'])}/</span>
+            <span class="card-path">{PUBLIC_HOST}/{esc(p['slug'])}</span>
           </a>
           <div class="card-meta">
             <span>ID {esc(p['id'])}</span>
@@ -51,7 +61,7 @@ def main() -> None:
     total = sum(len(g["pages"]) for g in CATALOG["groups"])
     sections = "".join(section(g) for g in CATALOG["groups"])
     skipped = "".join(
-        f"<li><strong>{esc(p['title'])}</strong> (ID {esc(p['id'])}): {esc(p['reason'])}</li>"
+        f"<li><strong>{esc(sem_travessao(p['title']))}</strong> (ID {esc(p['id'])}): {esc(p['reason'])}</li>"
         for p in CATALOG.get("not_cloned", [])
     )
     page = f"""<!DOCTYPE html>
@@ -124,7 +134,7 @@ def main() -> None:
       <img src="{LOGO}" alt="BNI">
       <div>
         <h1>Landing Pages BNI</h1>
-        <p>Cópias das {total} landing pages de landing.bnibrasil.com.br. Cada página fica no próprio subdiretório.</p>
+        <p>As {total} landing pages de landing.bnibrasil.com.br, publicadas em {PUBLIC_HOST}.</p>
       </div>
     </div>
   </header>
