@@ -47,6 +47,8 @@ const wpfV4 = (id) => ({
 
 const CASES = [
   { key: "elementor:281498:d7b5a52", slug: "lp-regional-belem", fill: elementorRegional, ui: true },
+  { key: "elementor:lp-regional-montesclaros:d7b5a52", slug: "lp-regional-montesclaros", fill: elementorRegional, ui: true },
+  { key: "elementor:lp-regional-salvador:d7b5a52", slug: "lp-regional-salvador", fill: elementorRegional, ui: true },
   { key: "elementor:335480:d7b5a52", slug: "lp-agende-sua-visita-regional-paraiba", fill: elementorRegional },
   { key: "elementor:23345:d7b5a52", slug: "lp-agende-sua-visita-triangulo-mineiro", fill: elementorRegional },
   { key: "elementor:1721:fdb77b4", slug: "lp-networking-linkedin", fill: elementorRegional },

@@ -78,6 +78,34 @@ Carrinho, Finalização de compra, Minha conta). Essas páginas são dinâmicas 
 dependem do backend da loja, então não são landing pages. A lista completa está
 em `pages.json` (`not_cloned`).
 
+## LPs derivadas (cópias com outro endereço)
+
+Algumas LPs não existem no WordPress: são cópias de uma LP clonada, com outro
+endereço e outro destino para o formulário. Ficam no `pages.json` com
+`"template"` (a LP de origem) e sem `"source"`, e são geradas por
+`tools/derive_pages.py` (que o `tools/forms/build_config.py` também chama).
+
+| LP | Cópia de | Fluxo no n8n | Planilha |
+|---|---|---|---|
+| `/lp-regional-montesclaros` (Montes Claros / Pirapora / Bocaiúva / Salinas) | `lp-regional-belem` | "BNI - Leads (Montes Claros / Pirapora / Bocaiúva / Salinas)" | "LP - BNI (Montes Claros / Pirapora / Bocaiúva / Salinas)" |
+| `/lp-regional-salvador` | `lp-regional-belem` | "BNI - Leads (Salvador)" | "LP - BNI Salvador" |
+
+- O formulário manda no formato do Elementor para o webhook do fluxo
+  (`n8n.v4mundim.com`), que grava na planilha com a credencial "Google Felipe
+  Sant'Anna". As colunas seguem a planilha modelo das regionais: Data, Nome,
+  Email, Telefone, Cidade, Estado, Area de Atuacao, Source, Medium, Campaign,
+  Value, Status, caracteres (o fluxo cria o cabeçalho se a planilha estiver
+  vazia).
+- As URLs desses webhooks ficam na variável **`LP_WEBHOOKS_EXTRA`** da Vercel
+  (projeto `bni`), separada da `LP_WEBHOOKS`. Localmente, em
+  `tools/forms/webhooks.extra.secret.json` (fora do git).
+- Para o endereço em `pages.bnibrasil.com.br` funcionar, o slug precisa estar
+  na lista `LPS` do `next.config.ts` do `bni-lp` (e um deploy de lá).
+- Para criar outra: acrescentar a entrada no `pages.json` (slug, template,
+  title, wp_title, form_name, webhook_ref), rodar `python3 tools/derive_pages.py`
+  e `python3 tools/build_index.py`, e pôr a URL do webhook na
+  `LP_WEBHOOKS_EXTRA`.
+
 ## Formulários (sem WordPress)
 
 Os formulários WPForms e Elementor das LPs **não dependem mais do WordPress**.

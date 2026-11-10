@@ -76,6 +76,28 @@
           "modified": "02/06/2026"
         },
         {
+          "id": null,
+          "title": "Regional – Montes Claros / Pirapora / Bocaiúva / Salinas",
+          "source": null,
+          "slug": "lp-regional-montesclaros",
+          "modified": "10/11/2026",
+          "template": "lp-regional-belem",
+          "wp_title": "LP - Agende sua visita - Regional - Montes Claros / Pirapora / Bocaiúva / Salinas",
+          "form_name": "LP Montes Claros",
+          "webhook_ref": "wh_n8n_montesclaros"
+        },
+        {
+          "id": null,
+          "title": "Regional – Salvador",
+          "source": null,
+          "slug": "lp-regional-salvador",
+          "modified": "10/11/2026",
+          "template": "lp-regional-belem",
+          "wp_title": "LP - Agende sua visita - Regional - Salvador",
+          "form_name": "LP Salvador",
+          "webhook_ref": "wh_n8n_salvador"
+        },
+        {
           "id": 58496,
           "title": "Regiões",
           "source": "/lp-agende-sua-visita-regioes/",

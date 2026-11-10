@@ -32,6 +32,8 @@ def card(p: dict) -> str:
     # Link relativo e sem barra final: funciona em lps-bni.vercel.app/ e em
     # pages.bnibrasil.com.br/index, e lá evita o 308 que o Next faz para
     # tirar a barra.
+    original = (f'<a href="{esc(ORIGIN + p["source"])}" target="_blank" rel="noopener">Ver original ↗</a>'
+                if p.get("source") else '<span class="card-new">Nova (cópia da ' + esc(p.get("template", "")) + ")</span>")
     return f"""
         <li class="card" data-search="{esc(search)}">
           <a class="card-main" href="{esc(p['slug'])}">
@@ -39,9 +41,9 @@ def card(p: dict) -> str:
             <span class="card-path">{PUBLIC_HOST}/{esc(p['slug'])}</span>
           </a>
           <div class="card-meta">
-            <span>ID {esc(p['id'])}</span>
+            <span>{("ID " + esc(p['id'])) if p.get('id') else "Página nova"}</span>
             <span>Atualizada em {esc(p['modified'])}</span>
-            <a href="{esc(ORIGIN + p['source'])}" target="_blank" rel="noopener">Ver original ↗</a>
+            {original}
           </div>
         </li>"""
 
@@ -116,7 +118,7 @@ def main() -> None:
   .card-title {{ display: block; font-weight: 650; }}
   .card-path {{ display: block; color: var(--red); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .82rem; margin-top: 4px; overflow-wrap: anywhere; }}
   .card-meta {{ display: flex; flex-wrap: wrap; gap: 4px 14px; padding: 10px 18px 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; }}
-  .card-meta a {{ margin-left: auto; color: var(--muted); }}
+  .card-meta a, .card-meta .card-new {{ margin-left: auto; color: var(--muted); }}
   .card-meta a:hover {{ color: var(--red); }}
   .hidden {{ display: none !important; }}
   .empty {{ color: var(--muted); }}
