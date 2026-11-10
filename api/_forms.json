@@ -1,0 +1,2145 @@
+{
+ "_aviso": "Gerado por tools/forms/build_config.py. Sem URLs nem segredos: eles ficam na variável de ambiente LP_WEBHOOKS da Vercel.",
+ "wpforms_webhooks_version": "1.3.0",
+ "wordpress_version": "7.1",
+ "forms": {
+  "elementor:335480:d7b5a52": {
+   "kind": "elementor",
+   "page": "lp-agende-sua-visita-regional-paraiba",
+   "form_id": "d7b5a52",
+   "form_name": "LP Pernambuco",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Nome",
+     "required": true
+    },
+    {
+     "id": "field_d637b34",
+     "type": "tel",
+     "label": "Telefone",
+     "required": true
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true
+    },
+    {
+     "id": "field_30c7c87",
+     "type": "text",
+     "label": "Cidade",
+     "required": true
+    },
+    {
+     "id": "field_6502370",
+     "type": "select",
+     "label": "Estado (UF)",
+     "required": true
+    },
+    {
+     "id": "field_1ef7f89",
+     "type": "text",
+     "label": "Atuação",
+     "required": true
+    },
+    {
+     "id": "field_7412441",
+     "type": "acceptance",
+     "label": "LGPD",
+     "required": true
+    },
+    {
+     "id": "utm_source",
+     "type": "hidden",
+     "label": "utm_source",
+     "required": false
+    },
+    {
+     "id": "utm_campaign",
+     "type": "hidden",
+     "label": "utm_campaign",
+     "required": false
+    },
+    {
+     "id": "utm_term",
+     "type": "hidden",
+     "label": "utm_term",
+     "required": false
+    },
+    {
+     "id": "utm_medium",
+     "type": "hidden",
+     "label": "utm_medium",
+     "required": false
+    },
+    {
+     "id": "utm_name",
+     "type": "hidden",
+     "label": "utm_name",
+     "required": false
+    }
+   ],
+   "webhook": "wh_e6236c2f05",
+   "redirect": "https://lp.bnibrasil.net.br/obrigado-pelo-cadastro-tm",
+   "messages": {
+    "success": "Formulário enviado com sucesso!",
+    "error": "Envio falhou por erro do servidor.",
+    "server": "Erro no envio. Tente novamente mais tarde.",
+    "required": "This field is required."
+   }
+  },
+  "elementor:335466:d7b5a52": {
+   "kind": "elementor",
+   "page": "lp-agende-sua-visita-regional-pernambuco",
+   "form_id": "d7b5a52",
+   "form_name": "LP Pernambuco",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Nome",
+     "required": true
+    },
+    {
+     "id": "field_d637b34",
+     "type": "tel",
+     "label": "Telefone",
+     "required": true
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true
+    },
+    {
+     "id": "field_30c7c87",
+     "type": "text",
+     "label": "Cidade",
+     "required": true
+    },
+    {
+     "id": "field_6502370",
+     "type": "select",
+     "label": "Estado (UF)",
+     "required": true
+    },
+    {
+     "id": "field_1ef7f89",
+     "type": "text",
+     "label": "Atuação",
+     "required": true
+    },
+    {
+     "id": "field_7412441",
+     "type": "acceptance",
+     "label": "LGPD",
+     "required": true
+    },
+    {
+     "id": "utm_source",
+     "type": "hidden",
+     "label": "utm_source",
+     "required": false
+    },
+    {
+     "id": "utm_campaign",
+     "type": "hidden",
+     "label": "utm_campaign",
+     "required": false
+    },
+    {
+     "id": "utm_term",
+     "type": "hidden",
+     "label": "utm_term",
+     "required": false
+    },
+    {
+     "id": "utm_medium",
+     "type": "hidden",
+     "label": "utm_medium",
+     "required": false
+    },
+    {
+     "id": "utm_name",
+     "type": "hidden",
+     "label": "utm_name",
+     "required": false
+    }
+   ],
+   "webhook": "wh_44b3c0e973",
+   "redirect": "https://lp.bnibrasil.net.br/obrigado-pelo-cadastro-tm",
+   "messages": {
+    "success": "Formulário enviado com sucesso!",
+    "error": "Envio falhou por erro do servidor.",
+    "server": "Erro no envio. Tente novamente mais tarde.",
+    "required": "This field is required."
+   }
+  },
+  "elementor:281239:d7b5a52": {
+   "kind": "elementor",
+   "page": "lp-regional-triminieiro",
+   "form_id": "d7b5a52",
+   "form_name": "LP Triângulo Mineiro",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Nome",
+     "required": true
+    },
+    {
+     "id": "field_d637b34",
+     "type": "tel",
+     "label": "Telefone",
+     "required": true
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true
+    },
+    {
+     "id": "field_30c7c87",
+     "type": "text",
+     "label": "Cidade",
+     "required": true
+    },
+    {
+     "id": "field_6502370",
+     "type": "select",
+     "label": "Estado (UF)",
+     "required": true
+    },
+    {
+     "id": "field_1ef7f89",
+     "type": "text",
+     "label": "Atuação",
+     "required": false
+    },
+    {
+     "id": "field_7412441",
+     "type": "acceptance",
+     "label": "LGPD",
+     "required": true
+    },
+    {
+     "id": "utm_source",
+     "type": "hidden",
+     "label": "utm_source",
+     "required": false
+    },
+    {
+     "id": "utm_campaign",
+     "type": "hidden",
+     "label": "utm_campaign",
+     "required": false
+    },
+    {
+     "id": "utm_term",
+     "type": "hidden",
+     "label": "utm_term",
+     "required": false
+    },
+    {
+     "id": "utm_medium",
+     "type": "hidden",
+     "label": "utm_medium",
+     "required": false
+    },
+    {
+     "id": "utm_name",
+     "type": "hidden",
+     "label": "utm_name",
+     "required": false
+    }
+   ],
+   "webhook": "wh_01d3f3092e",
+   "redirect": "https://lp.bnibrasil.net.br/obrigado-pelo-cadastro-tm",
+   "messages": {
+    "success": "Formulário enviado com sucesso!",
+    "error": "Envio falhou por erro do servidor.",
+    "server": "Erro no envio. Tente novamente mais tarde.",
+    "required": "This field is required."
+   }
+  },
+  "elementor:281591:d7b5a52": {
+   "kind": "elementor",
+   "page": "lp-regional-spcentral",
+   "form_id": "d7b5a52",
+   "form_name": "LP SP Central",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Nome",
+     "required": true
+    },
+    {
+     "id": "field_d637b34",
+     "type": "tel",
+     "label": "Telefone",
+     "required": true
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true
+    },
+    {
+     "id": "field_30c7c87",
+     "type": "text",
+     "label": "Cidade",
+     "required": true
+    },
+    {
+     "id": "field_6502370",
+     "type": "select",
+     "label": "Estado (UF)",
+     "required": true
+    },
+    {
+     "id": "field_1ef7f89",
+     "type": "text",
+     "label": "Atuação",
+     "required": false
+    },
+    {
+     "id": "field_7412441",
+     "type": "acceptance",
+     "label": "LGPD",
+     "required": true
+    },
+    {
+     "id": "utm_source",
+     "type": "hidden",
+     "label": "utm_source",
+     "required": false
+    },
+    {
+     "id": "utm_campaign",
+     "type": "hidden",
+     "label": "utm_campaign",
+     "required": false
+    },
+    {
+     "id": "utm_term",
+     "type": "hidden",
+     "label": "utm_term",
+     "required": false
+    },
+    {
+     "id": "utm_medium",
+     "type": "hidden",
+     "label": "utm_medium",
+     "required": false
+    },
+    {
+     "id": "utm_name",
+     "type": "hidden",
+     "label": "utm_name",
+     "required": false
+    }
+   ],
+   "webhook": "wh_01d3f3092e",
+   "redirect": "https://lp.bnibrasil.net.br/obrigado-pelo-cadastro-tm",
+   "messages": {
+    "success": "Formulário enviado com sucesso!",
+    "error": "Envio falhou por erro do servidor.",
+    "server": "Erro no envio. Tente novamente mais tarde.",
+    "required": "This field is required."
+   }
+  },
+  "elementor:281561:d7b5a52": {
+   "kind": "elementor",
+   "page": "lp-regional-nortefluminense",
+   "form_id": "d7b5a52",
+   "form_name": "LP Norte Fluminense",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Nome",
+     "required": true
+    },
+    {
+     "id": "field_d637b34",
+     "type": "tel",
+     "label": "Telefone",
+     "required": true
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true
+    },
+    {
+     "id": "field_30c7c87",
+     "type": "text",
+     "label": "Cidade",
+     "required": true
+    },
+    {
+     "id": "field_6502370",
+     "type": "select",
+     "label": "Estado (UF)",
+     "required": true
+    },
+    {
+     "id": "field_1ef7f89",
+     "type": "text",
+     "label": "Atuação",
+     "required": false
+    },
+    {
+     "id": "field_7412441",
+     "type": "acceptance",
+     "label": "LGPD",
+     "required": true
+    },
+    {
+     "id": "utm_source",
+     "type": "hidden",
+     "label": "utm_source",
+     "required": false
+    },
+    {
+     "id": "utm_campaign",
+     "type": "hidden",
+     "label": "utm_campaign",
+     "required": false
+    },
+    {
+     "id": "utm_term",
+     "type": "hidden",
+     "label": "utm_term",
+     "required": false
+    },
+    {
+     "id": "utm_medium",
+     "type": "hidden",
+     "label": "utm_medium",
+     "required": false
+    },
+    {
+     "id": "utm_name",
+     "type": "hidden",
+     "label": "utm_name",
+     "required": false
+    }
+   ],
+   "webhook": "wh_01d3f3092e",
+   "redirect": "https://lp.bnibrasil.net.br/obrigado-pelo-cadastro-tm",
+   "messages": {
+    "success": "Formulário enviado com sucesso!",
+    "error": "Envio falhou por erro do servidor.",
+    "server": "Erro no envio. Tente novamente mais tarde.",
+    "required": "This field is required."
+   }
+  },
+  "elementor:281573:d7b5a52": {
+   "kind": "elementor",
+   "page": "lp-regional-altanoroestepaulista",
+   "form_id": "d7b5a52",
+   "form_name": "LP Noroeste Paulista",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Nome",
+     "required": true
+    },
+    {
+     "id": "field_d637b34",
+     "type": "tel",
+     "label": "Telefone",
+     "required": true
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true
+    },
+    {
+     "id": "field_30c7c87",
+     "type": "text",
+     "label": "Cidade",
+     "required": true
+    },
+    {
+     "id": "field_6502370",
+     "type": "select",
+     "label": "Estado (UF)",
+     "required": true
+    },
+    {
+     "id": "field_1ef7f89",
+     "type": "text",
+     "label": "Atuação",
+     "required": false
+    },
+    {
+     "id": "field_7412441",
+     "type": "acceptance",
+     "label": "LGPD",
+     "required": true
+    },
+    {
+     "id": "utm_source",
+     "type": "hidden",
+     "label": "utm_source",
+     "required": false
+    },
+    {
+     "id": "utm_campaign",
+     "type": "hidden",
+     "label": "utm_campaign",
+     "required": false
+    },
+    {
+     "id": "utm_term",
+     "type": "hidden",
+     "label": "utm_term",
+     "required": false
+    },
+    {
+     "id": "utm_medium",
+     "type": "hidden",
+     "label": "utm_medium",
+     "required": false
+    },
+    {
+     "id": "utm_name",
+     "type": "hidden",
+     "label": "utm_name",
+     "required": false
+    }
+   ],
+   "webhook": "wh_01d3f3092e",
+   "redirect": "https://lp.bnibrasil.net.br/obrigado-pelo-cadastro-tm",
+   "messages": {
+    "success": "Formulário enviado com sucesso!",
+    "error": "Envio falhou por erro do servidor.",
+    "server": "Erro no envio. Tente novamente mais tarde.",
+    "required": "This field is required."
+   }
+  },
+  "elementor:281549:d7b5a52": {
+   "kind": "elementor",
+   "page": "lp-regional-rgssudeste",
+   "form_id": "d7b5a52",
+   "form_name": "LP RGS Sudeste",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Nome",
+     "required": true
+    },
+    {
+     "id": "field_d637b34",
+     "type": "tel",
+     "label": "Telefone",
+     "required": true
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true
+    },
+    {
+     "id": "field_30c7c87",
+     "type": "text",
+     "label": "Cidade",
+     "required": true
+    },
+    {
+     "id": "field_6502370",
+     "type": "select",
+     "label": "Estado (UF)",
+     "required": true
+    },
+    {
+     "id": "field_1ef7f89",
+     "type": "text",
+     "label": "Atuação",
+     "required": false
+    },
+    {
+     "id": "field_7412441",
+     "type": "acceptance",
+     "label": "LGPD",
+     "required": true
+    },
+    {
+     "id": "utm_source",
+     "type": "hidden",
+     "label": "utm_source",
+     "required": false
+    },
+    {
+     "id": "utm_campaign",
+     "type": "hidden",
+     "label": "utm_campaign",
+     "required": false
+    },
+    {
+     "id": "utm_term",
+     "type": "hidden",
+     "label": "utm_term",
+     "required": false
+    },
+    {
+     "id": "utm_medium",
+     "type": "hidden",
+     "label": "utm_medium",
+     "required": false
+    },
+    {
+     "id": "utm_name",
+     "type": "hidden",
+     "label": "utm_name",
+     "required": false
+    }
+   ],
+   "webhook": "wh_01d3f3092e",
+   "redirect": "https://lp.bnibrasil.net.br/obrigado-pelo-cadastro-tm",
+   "messages": {
+    "success": "Formulário enviado com sucesso!",
+    "error": "Envio falhou por erro do servidor.",
+    "server": "Erro no envio. Tente novamente mais tarde.",
+    "required": "This field is required."
+   }
+  },
+  "elementor:281543:d7b5a52": {
+   "kind": "elementor",
+   "page": "lp-regional-teresina",
+   "form_id": "d7b5a52",
+   "form_name": "LP Teresina",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Nome",
+     "required": true
+    },
+    {
+     "id": "field_d637b34",
+     "type": "tel",
+     "label": "Telefone",
+     "required": true
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true
+    },
+    {
+     "id": "field_30c7c87",
+     "type": "text",
+     "label": "Cidade",
+     "required": true
+    },
+    {
+     "id": "field_6502370",
+     "type": "select",
+     "label": "Estado (UF)",
+     "required": true
+    },
+    {
+     "id": "field_1ef7f89",
+     "type": "text",
+     "label": "Atuação",
+     "required": false
+    },
+    {
+     "id": "field_7412441",
+     "type": "acceptance",
+     "label": "LGPD",
+     "required": true
+    },
+    {
+     "id": "utm_source",
+     "type": "hidden",
+     "label": "utm_source",
+     "required": false
+    },
+    {
+     "id": "utm_campaign",
+     "type": "hidden",
+     "label": "utm_campaign",
+     "required": false
+    },
+    {
+     "id": "utm_term",
+     "type": "hidden",
+     "label": "utm_term",
+     "required": false
+    },
+    {
+     "id": "utm_medium",
+     "type": "hidden",
+     "label": "utm_medium",
+     "required": false
+    },
+    {
+     "id": "utm_name",
+     "type": "hidden",
+     "label": "utm_name",
+     "required": false
+    }
+   ],
+   "webhook": "wh_01d3f3092e",
+   "redirect": "https://lp.bnibrasil.net.br/obrigado-pelo-cadastro-tm",
+   "messages": {
+    "success": "Formulário enviado com sucesso!",
+    "error": "Envio falhou por erro do servidor.",
+    "server": "Erro no envio. Tente novamente mais tarde.",
+    "required": "This field is required."
+   }
+  },
+  "elementor:281498:d7b5a52": {
+   "kind": "elementor",
+   "page": "lp-regional-belem",
+   "form_id": "d7b5a52",
+   "form_name": "LP Belém",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Nome",
+     "required": true
+    },
+    {
+     "id": "field_d637b34",
+     "type": "tel",
+     "label": "Telefone",
+     "required": true
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true
+    },
+    {
+     "id": "field_30c7c87",
+     "type": "text",
+     "label": "Cidade",
+     "required": true
+    },
+    {
+     "id": "field_6502370",
+     "type": "select",
+     "label": "Estado (UF)",
+     "required": true
+    },
+    {
+     "id": "field_1ef7f89",
+     "type": "text",
+     "label": "Atuação",
+     "required": false
+    },
+    {
+     "id": "field_7412441",
+     "type": "acceptance",
+     "label": "LGPD",
+     "required": true
+    },
+    {
+     "id": "utm_source",
+     "type": "hidden",
+     "label": "utm_source",
+     "required": false
+    },
+    {
+     "id": "utm_campaign",
+     "type": "hidden",
+     "label": "utm_campaign",
+     "required": false
+    },
+    {
+     "id": "utm_term",
+     "type": "hidden",
+     "label": "utm_term",
+     "required": false
+    },
+    {
+     "id": "utm_medium",
+     "type": "hidden",
+     "label": "utm_medium",
+     "required": false
+    },
+    {
+     "id": "utm_name",
+     "type": "hidden",
+     "label": "utm_name",
+     "required": false
+    }
+   ],
+   "webhook": "wh_01d3f3092e",
+   "redirect": "https://lp.bnibrasil.net.br/obrigado-pelo-cadastro-tm",
+   "messages": {
+    "success": "Formulário enviado com sucesso!",
+    "error": "Envio falhou por erro do servidor.",
+    "server": "Erro no envio. Tente novamente mais tarde.",
+    "required": "This field is required."
+   }
+  },
+  "elementor:281317:d7b5a52": {
+   "kind": "elementor",
+   "page": "lp-regional-rgsportoalegreoeste",
+   "form_id": "d7b5a52",
+   "form_name": "LP Porto Alegre",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Nome",
+     "required": true
+    },
+    {
+     "id": "field_d637b34",
+     "type": "tel",
+     "label": "Telefone",
+     "required": true
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true
+    },
+    {
+     "id": "field_30c7c87",
+     "type": "text",
+     "label": "Cidade",
+     "required": true
+    },
+    {
+     "id": "field_6502370",
+     "type": "select",
+     "label": "Estado (UF)",
+     "required": true
+    },
+    {
+     "id": "field_1ef7f89",
+     "type": "text",
+     "label": "Atuação",
+     "required": false
+    },
+    {
+     "id": "field_7412441",
+     "type": "acceptance",
+     "label": "LGPD",
+     "required": true
+    },
+    {
+     "id": "utm_source",
+     "type": "hidden",
+     "label": "utm_source",
+     "required": false
+    },
+    {
+     "id": "utm_campaign",
+     "type": "hidden",
+     "label": "utm_campaign",
+     "required": false
+    },
+    {
+     "id": "utm_term",
+     "type": "hidden",
+     "label": "utm_term",
+     "required": false
+    },
+    {
+     "id": "utm_medium",
+     "type": "hidden",
+     "label": "utm_medium",
+     "required": false
+    },
+    {
+     "id": "utm_name",
+     "type": "hidden",
+     "label": "utm_name",
+     "required": false
+    }
+   ],
+   "webhook": "wh_01d3f3092e",
+   "redirect": "https://lp.bnibrasil.net.br/obrigado-pelo-cadastro-tm",
+   "messages": {
+    "success": "Formulário enviado com sucesso!",
+    "error": "Envio falhou por erro do servidor.",
+    "server": "Erro no envio. Tente novamente mais tarde.",
+    "required": "This field is required."
+   }
+  },
+  "elementor:23345:d7b5a52": {
+   "kind": "elementor",
+   "page": "lp-agende-sua-visita-triangulo-mineiro",
+   "form_id": "d7b5a52",
+   "form_name": "LP Triângulo Mineiro",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Nome",
+     "required": true
+    },
+    {
+     "id": "field_d637b34",
+     "type": "tel",
+     "label": "Telefone",
+     "required": true
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true
+    },
+    {
+     "id": "field_30c7c87",
+     "type": "text",
+     "label": "Cidade",
+     "required": true
+    },
+    {
+     "id": "field_6502370",
+     "type": "select",
+     "label": "Estado (UF)",
+     "required": true
+    },
+    {
+     "id": "field_1ef7f89",
+     "type": "text",
+     "label": "Atuação",
+     "required": false
+    },
+    {
+     "id": "field_7412441",
+     "type": "acceptance",
+     "label": "LGPD",
+     "required": true
+    },
+    {
+     "id": "utm_source",
+     "type": "hidden",
+     "label": "utm_source",
+     "required": false
+    },
+    {
+     "id": "utm_campaign",
+     "type": "hidden",
+     "label": "utm_campaign",
+     "required": false
+    },
+    {
+     "id": "utm_term",
+     "type": "hidden",
+     "label": "utm_term",
+     "required": false
+    },
+    {
+     "id": "utm_medium",
+     "type": "hidden",
+     "label": "utm_medium",
+     "required": false
+    },
+    {
+     "id": "utm_name",
+     "type": "hidden",
+     "label": "utm_name",
+     "required": false
+    }
+   ],
+   "webhook": "wh_5c4d7edab5",
+   "redirect": "https://lp.bnibrasil.net.br/obrigado-pelo-cadastro-tm",
+   "messages": {
+    "success": "Formulário enviado com sucesso!",
+    "error": "Envio falhou por erro do servidor.",
+    "server": "Erro no envio. Tente novamente mais tarde.",
+    "required": "This field is required."
+   }
+  },
+  "elementor:1721:fdb77b4": {
+   "kind": "elementor",
+   "page": "lp-networking-linkedin",
+   "form_id": "fdb77b4",
+   "form_name": "Form - visita",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Nome",
+     "required": true
+    },
+    {
+     "id": "field_d637b34",
+     "type": "tel",
+     "label": "Telefone",
+     "required": true
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true
+    },
+    {
+     "id": "field_30c7c87",
+     "type": "text",
+     "label": "Cidade",
+     "required": true
+    },
+    {
+     "id": "field_6502370",
+     "type": "select",
+     "label": "Estado (UF)",
+     "required": true
+    },
+    {
+     "id": "field_1ef7f89",
+     "type": "text",
+     "label": "Atuação",
+     "required": false
+    },
+    {
+     "id": "field_7412441",
+     "type": "acceptance",
+     "label": "LGPD",
+     "required": true
+    },
+    {
+     "id": "utm_source",
+     "type": "hidden",
+     "label": "utm_source",
+     "required": false
+    },
+    {
+     "id": "utm_campaign",
+     "type": "hidden",
+     "label": "utm_campaign",
+     "required": false
+    },
+    {
+     "id": "utm_term",
+     "type": "hidden",
+     "label": "utm_term",
+     "required": false
+    },
+    {
+     "id": "utm_medium",
+     "type": "hidden",
+     "label": "utm_medium",
+     "required": false
+    },
+    {
+     "id": "utm_name",
+     "type": "hidden",
+     "label": "utm_name",
+     "required": false
+    }
+   ],
+   "webhook": "wh_9e975e0ebc",
+   "redirect": "https://lp.bnibrasil.net.br/obrigado-pelo-cadastro",
+   "messages": {
+    "success": "Formulário enviado com sucesso!",
+    "error": "Envio falhou por erro do servidor.",
+    "server": "Erro no envio. Tente novamente mais tarde.",
+    "required": "This field is required."
+   }
+  },
+  "elementor:1789:5e2084b": {
+   "kind": "elementor",
+   "page": "lp-networking-meta-sao-carlos",
+   "form_id": "5e2084b",
+   "form_name": "Form - visita",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Nome",
+     "required": true
+    },
+    {
+     "id": "field_d637b34",
+     "type": "tel",
+     "label": "Telefone",
+     "required": true
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true
+    },
+    {
+     "id": "field_30c7c87",
+     "type": "text",
+     "label": "Cidade",
+     "required": true
+    },
+    {
+     "id": "field_6502370",
+     "type": "select",
+     "label": "Estado (UF)",
+     "required": true
+    },
+    {
+     "id": "field_1ef7f89",
+     "type": "text",
+     "label": "Atuação",
+     "required": false
+    },
+    {
+     "id": "field_7412441",
+     "type": "acceptance",
+     "label": "LGPD",
+     "required": false
+    },
+    {
+     "id": "utm_source",
+     "type": "hidden",
+     "label": "utm_source",
+     "required": false
+    },
+    {
+     "id": "utm_campaign",
+     "type": "hidden",
+     "label": "utm_campaign",
+     "required": false
+    },
+    {
+     "id": "utm_term",
+     "type": "hidden",
+     "label": "utm_term",
+     "required": false
+    },
+    {
+     "id": "utm_medium",
+     "type": "hidden",
+     "label": "utm_medium",
+     "required": false
+    },
+    {
+     "id": "utm_name",
+     "type": "hidden",
+     "label": "utm_name",
+     "required": false
+    }
+   ],
+   "webhook": "wh_a4a6855f47",
+   "redirect": "https://lp.bnibrasil.net.br/obrigado-pelo-cadastro",
+   "messages": {
+    "success": "Formulário enviado com sucesso!",
+    "error": "Envio falhou por erro do servidor.",
+    "server": "Erro no envio. Tente novamente mais tarde.",
+    "required": "This field is required."
+   }
+  },
+  "elementor:223:c18b733": {
+   "kind": "elementor",
+   "page": "lp-franquias",
+   "form_id": "c18b733",
+   "form_name": "Form - visita",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Nome",
+     "required": true
+    },
+    {
+     "id": "field_d637b34",
+     "type": "tel",
+     "label": "Telefone",
+     "required": true
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true
+    },
+    {
+     "id": "field_30c7c87",
+     "type": "text",
+     "label": "Cidade",
+     "required": true
+    },
+    {
+     "id": "field_6502370",
+     "type": "select",
+     "label": "Estado (UF)",
+     "required": true
+    },
+    {
+     "id": "field_1ef7f89",
+     "type": "text",
+     "label": "Atuação",
+     "required": false
+    },
+    {
+     "id": "field_7412441",
+     "type": "acceptance",
+     "label": "LGPD",
+     "required": true
+    },
+    {
+     "id": "utm_source",
+     "type": "hidden",
+     "label": "utm_source",
+     "required": false
+    },
+    {
+     "id": "utm_campaign",
+     "type": "hidden",
+     "label": "utm_campaign",
+     "required": false
+    },
+    {
+     "id": "utm_term",
+     "type": "hidden",
+     "label": "utm_term",
+     "required": false
+    },
+    {
+     "id": "utm_medium",
+     "type": "hidden",
+     "label": "utm_medium",
+     "required": false
+    },
+    {
+     "id": "utm_name",
+     "type": "hidden",
+     "label": "utm_name",
+     "required": false
+    }
+   ],
+   "webhook": "wh_9e975e0ebc",
+   "redirect": "https://lp.bnibrasil.net.br/obrigado-pelo-cadastro",
+   "messages": {
+    "success": "Formulário enviado com sucesso!",
+    "error": "Envio falhou por erro do servidor.",
+    "server": "Erro no envio. Tente novamente mais tarde.",
+    "required": "This field is required."
+   }
+  },
+  "wpforms:53": {
+   "kind": "wpforms",
+   "form_id": 53,
+   "title": "BNISP1",
+   "fields": {
+    "1": {
+     "type": "text",
+     "label": "Nome Completo",
+     "required": true,
+     "default": "",
+     "choices": []
+    },
+    "2": {
+     "type": "text",
+     "label": "Endereço com CEP",
+     "required": false,
+     "default": "",
+     "choices": []
+    },
+    "3": {
+     "type": "text",
+     "label": "Profissão, Especialidade",
+     "required": false,
+     "default": "",
+     "choices": []
+    },
+    "4": {
+     "type": "text",
+     "label": "Whatsapp",
+     "required": false,
+     "default": "",
+     "choices": []
+    }
+   },
+   "webhooks": [
+    {
+     "ref": "wh_7eaf4f122d",
+     "id": 1,
+     "name": "Webhook sem nome",
+     "method": "POST",
+     "format": "json",
+     "headers": {
+      "Nomecompleto": 1
+     },
+     "body": {
+      "NomeCompleto": 1,
+      "Endereo": 2,
+      "Profisso": 3,
+      "Whatsapp": 4
+     }
+    }
+   ],
+   "confirmation": {
+    "type": "redirect",
+    "redirect": "/confirmacao-de-mensagem",
+    "message": "<p>Obrigado por nos contatar! Entraremos em contato em breve.</p>"
+   }
+  },
+  "wpforms:4780": {
+   "kind": "wpforms",
+   "form_id": 4780,
+   "title": "Formulário V4",
+   "fields": {
+    "1": {
+     "type": "phone",
+     "label": "Whatsapp",
+     "required": true,
+     "default": "",
+     "choices": []
+    }
+   },
+   "webhooks": [
+    {
+     "ref": "wh_d09d63e8d0",
+     "id": 1,
+     "name": "Webhook sem nome",
+     "method": "POST",
+     "format": "json",
+     "headers": {
+      "custom_Indentificao": {
+       "value": "V4 Forms"
+      }
+     },
+     "body": {
+      "Whatsapp": 1,
+      "custom_page_url": {
+       "value": "{page_url}"
+      },
+      "custom_form_name": {
+       "value": "{form_name}"
+      },
+      "custom_page_title": {
+       "value": "{page_title}"
+      }
+     }
+    }
+   ],
+   "confirmation": {
+    "type": "redirect",
+    "redirect": "https://wa.me/551135323015",
+    "message": "<p>Obrigado por nos contatar! Entraremos em contato em breve.</p>"
+   }
+  },
+  "wpforms:32394": {
+   "kind": "wpforms",
+   "form_id": 32394,
+   "title": "Tráfego Pago Elevenmind",
+   "fields": {
+    "1": {
+     "type": "phone",
+     "label": "Insira seu whatsapp e seja atendido agora",
+     "required": false,
+     "default": "",
+     "choices": []
+    },
+    "2": {
+     "type": "hidden",
+     "label": "Jornada",
+     "required": false,
+     "default": "{url_referer}",
+     "choices": []
+    }
+   },
+   "webhooks": [
+    {
+     "ref": "wh_7c52e175cd",
+     "id": 1,
+     "name": "Webhook sem nome",
+     "method": "POST",
+     "format": "json",
+     "headers": {
+      "Whatsapp": 1,
+      "custom_URL": {
+       "value": "{page_url}"
+      },
+      "custom_Local": {
+       "value": "{entry_geolocation}"
+      },
+      "custom_Jornadadocliente": {
+       "value": "{url_referer} > {page_title} > Botão Z604"
+      },
+      "custom_Titulodapagina": {
+       "value": "{page_title}"
+      },
+      "custom_UTMSource": {
+       "value": "{UTM_Source}"
+      },
+      "custom_UTMMedium": {
+       "value": "{UTM_Media}"
+      },
+      "custom_UTMCampaign": {
+       "value": "{UTM_Campaign}"
+      },
+      "custom_URLanterior": {
+       "value": "{url_referer} "
+      },
+      "custom_UserIP": {
+       "value": "{user_ip}"
+      },
+      "custom_formulariodeorigem": {
+       "value": "Tráfego Pago Elevenmind"
+      }
+     },
+     "body": {}
+    }
+   ],
+   "confirmation": {
+    "type": "redirect",
+    "redirect": "https://wa.me/551135323015?text=Ol%C3%A1!+Gostaria+de+conhecer+uma+unidade+do+BNI",
+    "message": "<p>Obrigado por nos contatar! Entraremos em contato em breve.</p>"
+   }
+  },
+  "wpforms:32419": {
+   "kind": "wpforms",
+   "form_id": 32419,
+   "title": "Home",
+   "fields": {
+    "1": {
+     "type": "phone",
+     "label": "Insira seu whatsapp e seja atendido agora",
+     "required": false,
+     "default": "",
+     "choices": []
+    },
+    "2": {
+     "type": "hidden",
+     "label": "Jornada",
+     "required": false,
+     "default": "{url_referer}",
+     "choices": []
+    }
+   },
+   "webhooks": [
+    {
+     "ref": "wh_7c52e175cd",
+     "id": 1,
+     "name": "Webhook sem nome",
+     "method": "POST",
+     "format": "json",
+     "headers": {
+      "Whatsapp": 1,
+      "custom_URL": {
+       "value": "{page_url}"
+      },
+      "custom_Local": {
+       "value": "{entry_geolocation}"
+      },
+      "custom_Jornadadocliente": {
+       "value": "{url_referer} > {page_title} > Botão Z604"
+      },
+      "custom_Titulodapagina": {
+       "value": "{page_title}"
+      },
+      "custom_UTMSource": {
+       "value": "{UTM_Source}"
+      },
+      "custom_UTMMedium": {
+       "value": "{UTM_Media}"
+      },
+      "custom_UTMCampaign": {
+       "value": "{UTM_Campaign}"
+      },
+      "custom_URLanterior": {
+       "value": "{url_referer} "
+      },
+      "custom_UserIP": {
+       "value": "{user_ip}"
+      },
+      "custom_formulariodeorigem": {
+       "value": "Home"
+      }
+     },
+     "body": {}
+    }
+   ],
+   "confirmation": {
+    "type": "redirect",
+    "redirect": "https://wa.me/551135323015?text=Ol%C3%A1!+Gostaria+de+conhecer+uma+unidade+do+BNI",
+    "message": "<p>Obrigado por nos contatar! Entraremos em contato em breve.</p>"
+   }
+  },
+  "wpforms:36000": {
+   "kind": "wpforms",
+   "form_id": 36000,
+   "title": "Formulário V4 Completo",
+   "fields": {
+    "3": {
+     "type": "text",
+     "label": "Nome",
+     "required": false,
+     "default": "",
+     "choices": []
+    },
+    "1": {
+     "type": "phone",
+     "label": "Telefone",
+     "required": false,
+     "default": "",
+     "choices": []
+    },
+    "4": {
+     "type": "email",
+     "label": "E-mail",
+     "required": true,
+     "default": "",
+     "choices": []
+    },
+    "9": {
+     "type": "number",
+     "label": "CEP",
+     "required": false,
+     "default": "",
+     "choices": []
+    },
+    "8": {
+     "type": "text",
+     "label": "Cidade",
+     "required": false,
+     "default": "",
+     "choices": []
+    },
+    "7": {
+     "type": "select",
+     "label": "Estado",
+     "required": false,
+     "default": "",
+     "choices": [
+      "AC",
+      "AL",
+      "AP",
+      "AM",
+      "BA",
+      "CE",
+      "DF",
+      "ES",
+      "GO",
+      "MA",
+      "MT",
+      "MS",
+      "MG",
+      "PA",
+      "PB",
+      "PR",
+      "PE",
+      "PI",
+      "RJ",
+      "RN",
+      "RS",
+      "RO",
+      "RR",
+      "SC",
+      "SP",
+      "SE",
+      "TO"
+     ]
+    },
+    "6": {
+     "type": "text",
+     "label": "Fale sobre sua área de atuação",
+     "required": false,
+     "default": "",
+     "choices": []
+    },
+    "16": {
+     "type": "checkbox",
+     "label": "Caixas de marcação",
+     "required": false,
+     "default": "",
+     "choices": [
+      "Concordo em fornecer meus dados para receber conteúdos e ofertas por e-mail ou outros meios."
+     ]
+    },
+    "2": {
+     "type": "hidden",
+     "label": "Jornada",
+     "required": false,
+     "default": "{url_referer}",
+     "choices": []
+    },
+    "10": {
+     "type": "hidden",
+     "label": "utm_source",
+     "required": false,
+     "default": "{query_var key=\"utm_source\"}",
+     "choices": []
+    },
+    "11": {
+     "type": "hidden",
+     "label": "utm_campaign",
+     "required": false,
+     "default": "{query_var key=\"utm_campaign\"}",
+     "choices": []
+    },
+    "12": {
+     "type": "hidden",
+     "label": "utm_term",
+     "required": false,
+     "default": "{query_var key=\"utm_term\"}",
+     "choices": []
+    },
+    "13": {
+     "type": "hidden",
+     "label": "utm_content",
+     "required": false,
+     "default": "{query_var key=\"utm_content\"}",
+     "choices": []
+    },
+    "14": {
+     "type": "hidden",
+     "label": "utm_medium",
+     "required": false,
+     "default": "{query_var key=\"utm_medium\"}",
+     "choices": []
+    },
+    "15": {
+     "type": "hidden",
+     "label": "utm_name",
+     "required": false,
+     "default": "{query_var key=\"utm_name\"}",
+     "choices": []
+    }
+   },
+   "webhooks": [
+    {
+     "ref": "wh_61072e6b41",
+     "id": 4,
+     "name": "DEX",
+     "method": "POST",
+     "format": "json",
+     "headers": {
+      "custom_Gatilho": {
+       "value": "Lead Formulário"
+      }
+     },
+     "body": {
+      "nome": 3,
+      "telefone": 1,
+      "email": 4,
+      "cidade": 8,
+      "estado": 7,
+      "areadeatuacao": 6,
+      "source": 10,
+      "medium": 14,
+      "campaign": 15,
+      "custom_NomeLP": {
+       "value": "{page_title}"
+      }
+     }
+    },
+    {
+     "ref": "wh_be1d4261d0",
+     "id": 3,
+     "name": "N8N dna 11 - Atualiza planilha v4",
+     "method": "POST",
+     "format": "json",
+     "headers": {
+      "custom_Gatilho": {
+       "value": "lead formulário"
+      }
+     },
+     "body": {
+      "nome": 3,
+      "email": 4,
+      "telefone": 1,
+      "cidade": 8,
+      "estado": 7,
+      "areadeatuacao": 6,
+      "source": 10,
+      "medium": 14,
+      "campaign": 11,
+      "custom_nomeLP": {
+       "value": "{page_title}"
+      },
+      "CEP": 9
+     }
+    },
+    {
+     "ref": "wh_86ded34de6",
+     "id": 1,
+     "name": "N8n Elevenmind",
+     "method": "POST",
+     "format": "json",
+     "headers": {
+      "whatasapp": 1,
+      "nome": 3,
+      "email": 4,
+      "cidade": 8,
+      "estado": 7,
+      "especialidade": 6,
+      "custom_formulariodeorigem": {
+       "value": "Formulário V4 - {page_title}"
+      },
+      "cep": 9,
+      "source": 10,
+      "campaign": 11,
+      "medium": 14
+     },
+     "body": {}
+    }
+   ],
+   "confirmation": {
+    "type": "redirect",
+    "redirect": "https://lp.bnibrasil.net.br/obrigado-pelo-cadastro",
+    "message": "<p>Obrigado por nos contatar! Entraremos em contato em breve.</p>"
+   }
+  },
+  "wpforms:54803": {
+   "kind": "wpforms",
+   "form_id": 54803,
+   "title": "Formulário Social SP",
+   "fields": {
+    "3": {
+     "type": "text",
+     "label": "Nome",
+     "required": false,
+     "default": "",
+     "choices": []
+    },
+    "1": {
+     "type": "phone",
+     "label": "Telefone",
+     "required": false,
+     "default": "",
+     "choices": []
+    },
+    "4": {
+     "type": "email",
+     "label": "E-mail",
+     "required": true,
+     "default": "",
+     "choices": []
+    },
+    "9": {
+     "type": "number",
+     "label": "CEP",
+     "required": false,
+     "default": "",
+     "choices": []
+    },
+    "8": {
+     "type": "text",
+     "label": "Cidade",
+     "required": false,
+     "default": "",
+     "choices": []
+    },
+    "7": {
+     "type": "select",
+     "label": "Estado",
+     "required": false,
+     "default": "",
+     "choices": [
+      "AC",
+      "AL",
+      "AP",
+      "AM",
+      "BA",
+      "CE",
+      "DF",
+      "ES",
+      "GO",
+      "MA",
+      "MT",
+      "MS",
+      "MG",
+      "PA",
+      "PB",
+      "PR",
+      "PE",
+      "PI",
+      "RJ",
+      "RN",
+      "RS",
+      "RO",
+      "RR",
+      "SC",
+      "SP",
+      "SE",
+      "TO"
+     ]
+    },
+    "6": {
+     "type": "text",
+     "label": "Fale sobre sua área de atuação",
+     "required": false,
+     "default": "",
+     "choices": []
+    },
+    "16": {
+     "type": "checkbox",
+     "label": "Caixas de marcação",
+     "required": false,
+     "default": "",
+     "choices": [
+      "Concordo em fornecer meus dados para receber conteúdos e ofertas por e-mail ou outros meios."
+     ]
+    },
+    "2": {
+     "type": "hidden",
+     "label": "Jornada",
+     "required": false,
+     "default": "{url_referer}",
+     "choices": []
+    },
+    "10": {
+     "type": "hidden",
+     "label": "utm_source",
+     "required": false,
+     "default": "{query_var key=\"utm_source\"}",
+     "choices": []
+    },
+    "11": {
+     "type": "hidden",
+     "label": "utm_campaign",
+     "required": false,
+     "default": "{query_var key=\"utm_campaign\"}",
+     "choices": []
+    },
+    "12": {
+     "type": "hidden",
+     "label": "utm_term",
+     "required": false,
+     "default": "{query_var key=\"utm_term\"}",
+     "choices": []
+    },
+    "13": {
+     "type": "hidden",
+     "label": "utm_content",
+     "required": false,
+     "default": "{query_var key=\"utm_content\"}",
+     "choices": []
+    },
+    "14": {
+     "type": "hidden",
+     "label": "utm_medium",
+     "required": false,
+     "default": "{query_var key=\"utm_medium\"}",
+     "choices": []
+    },
+    "15": {
+     "type": "hidden",
+     "label": "utm_name",
+     "required": false,
+     "default": "{query_var key=\"utm_name\"}",
+     "choices": []
+    }
+   },
+   "webhooks": [
+    {
+     "ref": "wh_7c52e175cd",
+     "id": 1,
+     "name": "N8n Elevenmind",
+     "method": "POST",
+     "format": "json",
+     "headers": {
+      "Whatsapp": 1,
+      "Nome": 3,
+      "especialidade": 6,
+      "custom_URL": {
+       "value": "{page_url}"
+      },
+      "custom_Local": {
+       "value": "{entry_geolocation}"
+      },
+      "custom_Jornadadocliente": {
+       "value": "{url_referer} > {page_title} > Botão"
+      },
+      "custom_Titulodapagina": {
+       "value": "{page_title}"
+      },
+      "custom_UTMSource": {
+       "value": "{UTM_Source}"
+      },
+      "custom_UTMMedium": {
+       "value": "{UTM_Media}"
+      },
+      "custom_UTMCampaign": {
+       "value": "{UTM_Campaign}"
+      },
+      "custom_URLanterior": {
+       "value": "{url_referer} "
+      },
+      "custom_UserIP": {
+       "value": "{user_ip}"
+      },
+      "custom_formulariodeorigem": {
+       "value": "Formulário Social SP - {page_title}"
+      }
+     },
+     "body": {}
+    }
+   ],
+   "confirmation": {
+    "type": "redirect",
+    "redirect": "https://lp.bnibrasil.net.br/obrigado-pelo-cadastro",
+    "message": "<p>Obrigado por nos contatar! Entraremos em contato em breve.</p>"
+   }
+  },
+  "wpforms:54821": {
+   "kind": "wpforms",
+   "form_id": 54821,
+   "title": "CX - Primeira Coleta",
+   "fields": {
+    "9": {
+     "type": "phone",
+     "label": "Whatsapp de contato",
+     "required": true,
+     "default": "",
+     "choices": []
+    },
+    "1": {
+     "type": "select",
+     "label": "Como está sendo a integração na sua equipe até agora?",
+     "required": true,
+     "default": "",
+     "choices": [
+      "Excelente",
+      "Boa",
+      "Regular",
+      "Difícil"
+     ]
+    },
+    "2": {
+     "type": "select",
+     "label": "Você já concluiu o PSM (Programa de Sucesso do Membro)?",
+     "required": true,
+     "default": "",
+     "choices": [
+      "Sim",
+      "Ainda não, mas está em andamento",
+      "Ainda não"
+     ]
+    },
+    "3": {
+     "type": "select",
+     "label": "Você recebeu o kit de boas-vindas do BNI (pasta com informativos, pin, etc.)?",
+     "required": true,
+     "default": "",
+     "choices": [
+      "Sim",
+      "Não"
+     ]
+    },
+    "7": {
+     "type": "textarea",
+     "label": "Há algo que possamos fazer para tornar sua experiência inicial ainda melhor?",
+     "required": false,
+     "default": "",
+     "choices": []
+    }
+   },
+   "webhooks": [
+    {
+     "ref": "wh_f46364af6b",
+     "id": 1,
+     "name": "Webhook sem nome",
+     "method": "POST",
+     "format": "json",
+     "headers": {
+      "custom_Perodo": {
+       "value": "1"
+      }
+     },
+     "body": {
+      "Whatsapp": 9,
+      "ComovocconsiderasuaexperinciaBNI": 1,
+      "ParticipoudoPSM": 2,
+      "RecebeuKitdeboasvindas": 3,
+      "Halgoqueoossamosfazerparamelhorar": 7
+     }
+    }
+   ],
+   "confirmation": {
+    "type": "message",
+    "redirect": "",
+    "message": "<p>Obrigado por nos contatar! Entraremos em contato em breve.</p>"
+   }
+  },
+  "wpforms:55178": {
+   "kind": "wpforms",
+   "form_id": 55178,
+   "title": "CX - Segunda Coleta",
+   "fields": {
+    "9": {
+     "type": "phone",
+     "label": "Whatsapp de contato",
+     "required": true,
+     "default": "",
+     "choices": []
+    },
+    "1": {
+     "type": "select",
+     "label": "Como está sendo o acolhimento na sua equipe até agora?",
+     "required": true,
+     "default": "",
+     "choices": [
+      "Excelente",
+      "Boa",
+      "Regular",
+      "Difícil"
+     ]
+    },
+    "5": {
+     "type": "select",
+     "label": "De 1 a 5, como você avaliaria sua satisfação geral com o BNI até o momento?",
+     "required": true,
+     "default": "",
+     "choices": [
+      "1 - Nada satisfeito",
+      "2",
+      "3",
+      "4",
+      "5 – Muito satisfeito"
+     ]
+    },
+    "10": {
+     "type": "select",
+     "label": "Você tem sentido alguma dificuldade em relação à metodologia do BNI?",
+     "required": true,
+     "default": "",
+     "choices": [
+      "Não, está tudo tranquilo",
+      "Um pouco — mas estou me adaptando",
+      "Sim, tenho tido dificuldades"
+     ]
+    },
+    "7": {
+     "type": "textarea",
+     "label": "Quais os seus maiores desafios no início da jornada até o momento?",
+     "required": false,
+     "default": "",
+     "choices": []
+    }
+   },
+   "webhooks": [
+    {
+     "ref": "wh_ea1c20bec8",
+     "id": 1,
+     "name": "Webhook sem nome",
+     "method": "POST",
+     "format": "json",
+     "headers": {
+      "custom_Perodo": {
+       "value": "2"
+      }
+     },
+     "body": {
+      "Whatsapp": 9,
+      "ComovocconsiderasuaexperinciaBNI": 1,
+      "satisfaogeralatomomento": 5,
+      "Dificulademetodologia": 10,
+      "Halgoqueoossamosfazerparamelhorar": 7
+     }
+    }
+   ],
+   "confirmation": {
+    "type": "message",
+    "redirect": "",
+    "message": "<p>Obrigado por nos contatar! Entraremos em contato em breve.</p>"
+   }
+  },
+  "wpforms:55182": {
+   "kind": "wpforms",
+   "form_id": 55182,
+   "title": "CX - Terceira Coleta",
+   "fields": {
+    "9": {
+     "type": "phone",
+     "label": "Whatsapp de contato",
+     "required": true,
+     "default": "",
+     "choices": []
+    },
+    "1": {
+     "type": "select",
+     "label": "Como você descreveria seus três primeiros meses no BNI?",
+     "required": true,
+     "default": "",
+     "choices": [
+      "Excelentes — aprendi muito e fiz ótimos contatos",
+      "Bons — ainda me adaptando, mas com progresso",
+      "Regulares — esperava um pouco mais",
+      "Difíceis — tive desafios para me adaptar"
+     ]
+    },
+    "4": {
+     "type": "select",
+     "label": "Você percebe alguma contribuição do BNI para o seu negócio desde que ingressou?",
+     "required": true,
+     "default": "",
+     "choices": [
+      "Sim, já gerei negócios através do BNI",
+      "Ainda não, mas estou construindo boas oportunidades",
+      "Ainda não tive resultados"
+     ]
+    },
+    "12": {
+     "type": "number-slider",
+     "label": "Em uma escala de 0 a 10, o quanto você recomendaria o BNI a um amigo ou parceiro de negócios? ",
+     "required": false,
+     "default": "0",
+     "choices": []
+    },
+    "7": {
+     "type": "textarea",
+     "label": "Qual foi o principal benefício que o BNI trouxe para você até agora?",
+     "required": false,
+     "default": "",
+     "choices": []
+    },
+    "13": {
+     "type": "textarea",
+     "label": "Há algo que poderíamos melhorar para tornar sua experiência ainda mais valiosa?",
+     "required": false,
+     "default": "",
+     "choices": []
+    }
+   },
+   "webhooks": [
+    {
+     "ref": "wh_8438cc4599",
+     "id": 1,
+     "name": "Webhook sem nome",
+     "method": "POST",
+     "format": "json",
+     "headers": {
+      "custom_Perodo": {
+       "value": "3"
+      }
+     },
+     "body": {
+      "Whatsapp": 9,
+      "Descreveriasos3primeirosmeses": 1,
+      "Obtevealgumresultado": 4,
+      "NPS0a10": 12,
+      "Qualfoioprincipalbenefcio": 7,
+      "Halgoqueoossamosfazerparamelhorar": 13
+     }
+    }
+   ],
+   "confirmation": {
+    "type": "message",
+    "redirect": "",
+    "message": "<p>Obrigado por nos contatar! Entraremos em contato em breve.</p>"
+   }
+  }
+ }
+}

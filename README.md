@@ -78,23 +78,78 @@ Carrinho, Finalização de compra, Minha conta). Essas páginas são dinâmicas 
 dependem do backend da loja, então não são landing pages. A lista completa está
 em `pages.json` (`not_cloned`).
 
+## Formulários (sem WordPress)
+
+Os formulários WPForms e Elementor das LPs **não dependem mais do WordPress**.
+O HTML e o visual são os originais. Só o envio mudou: em vez do
+`admin-ajax.php`, vai para a função **`/api/enviar`** deste projeto
+(`https://lps-bni.vercel.app/api/enviar`), que repassa os dados para os
+**mesmos webhooks** configurados no WordPress, no mesmo formato:
+
+- **WPForms** (complemento Webhooks 1.3.0): JSON com os campos mapeados no
+  corpo e/ou nos cabeçalhos HTTP, `User-Agent: wpforms-webhooks/1.3.0`,
+  `X-WPForms-Webhook-Id` e `X-WPForms-Webhook-Signature` (HMAC com o segredo
+  do webhook). Como no WordPress, falha no webhook não impede a confirmação
+  para o visitante.
+- **Elementor** (ação Webhook): `x-www-form-urlencoded` com "rótulo do campo" =
+  valor, mais `form_id` e `form_name`. Se o webhook não responder 200, o
+  visitante vê a mensagem de erro do formulário, como no Elementor.
+- Depois do envio, o visitante vai para a mesma página de obrigado ou o mesmo
+  WhatsApp do original, ou vê a mesma mensagem de confirmação (Coleta CX).
+
+| Formulário | LPs |
+|---|---|
+| WPForms "Formulário V4 Completo" (3 webhooks) | networking, -meta, -google, -organico, rmkt, solucoes, social-sp, agende-sua-visita-form, pop-up do form-html |
+| WPForms "Formulário Social SP" | social-sp |
+| WPForms "Formulário V4" (WhatsApp) | agende-sua-visita, -regioes (pop-up) |
+| WPForms "Home" / "Tráfego Pago Elevenmind" | power-team / bnisp01 |
+| WPForms "BNISP1" | rafa1, v401, especialdenatal |
+| WPForms "CX - Primeira/Segunda/Terceira Coleta" | coleta-cx-mes-1, -2, -3 |
+| Elementor (webhook por LP) | as 10 regionais, triangulo-mineiro, networking-linkedin, networking-meta-sao-carlos, franquias |
+
+**Como funciona**
+
+- `api/_forms.json`: campos, mapeamentos e confirmações de cada formulário.
+  **Não tem URL de webhook nem segredo** (este repositório é público): cada
+  webhook aparece só por uma referência (`wh_…`).
+- Variável de ambiente **`LP_WEBHOOKS`** no projeto Vercel `bni` (Production e
+  Preview, tipo Sensitive): `{"wh_…": {"url": "...", "secret": "..."}}`. Sem
+  ela o formulário mostra erro em vez de perder o lead em silêncio.
+- `lp-assets/forms/lp-forms.js`: no navegador, envia o formulário marcado com
+  `data-lp-form` para a função e mostra confirmação, erro ou redireciona.
+- `tools/localize_forms.py`: marca os formulários nas cópias, desliga o envio
+  pelo WordPress (classes `wpforms-validate`/`wpforms-ajax-form`, token
+  anti-spam e `data-widget_type="form.default"` do Elementor) e inclui o
+  script. Roda sozinho no fim do `tools/clone_lps.py`.
+- `tools/forms/build_config.py`: lê a configuração no WordPress (só leitura;
+  precisa de senha de aplicativo de administrador) e gera `api/_forms.json` e
+  `tools/forms/webhooks.secret.json` (fora do git, é o conteúdo da
+  `LP_WEBHOOKS`). Rode de novo se mudarem campos ou webhooks no WordPress.
+- Ficaram de fora, a pedido: o "Form - visita" do Elementor (`7c90bc7`), que só
+  mandava e-mail e não tinha webhook, e os e-mails de aviso dos WPForms. O
+  formulário em HTML da LP "Form HTML" também não foi mexido.
+- Diferenças em relação ao WordPress: as UTMs (`{UTM_Source}` etc., que no
+  WordPress saíam literais) e os campos ocultos de UTM do Elementor (que
+  saíam vazios) agora levam os valores reais da URL; a localização
+  (`{entry_geolocation}`) vem da Vercel no formato "Cidade, UF, BR".
+
+**Testar sem enviar nada aos webhooks reais**
+
+```bash
+node tools/forms/dev_server.js          # função + webhook falso (grava em tools/forms/capturas.jsonl)
+python3 -m http.server 8765             # em outro terminal, na raiz do repositório
+node tools/forms/teste_local.js         # 16 casos, de ponta a ponta (Playwright)
+```
+
+Em produção, o cabeçalho `X-LP-Dry-Run: 1` faz a função devolver o que
+enviaria (URLs mascaradas) sem chamar nenhum webhook.
+
 ## O que continua dependendo do WordPress original
 
-O HTML, o CSS, as imagens e os scripts estão todos no repositório. Algumas coisas,
-porém, só funcionam com um servidor e por isso continuam apontando para
-`https://landing.bnibrasil.com.br`:
-
-- **Formulários Elementor e WPForms** (Agende sua visita, regionais, Networking,
-  Coleta CX, Social SP etc.) enviam os dados para `wp-admin/admin-ajax.php` do
-  site original. O WordPress não libera CORS para outros domínios, então, num
-  domínio novo, o navegador bloqueia a resposta. O usuário vê erro e o
-  redirecionamento pós-envio não acontece. Para os formulários funcionarem
-  aqui, há dois caminhos: liberar CORS no WordPress para o novo domínio, ou
-  trocar o envio por um webhook (como já faz a LP "Form HTML").
-- **"Form HTML"** (`/lp-agende-sua-visita-form-html/`) já envia direto para
-  webhooks externos (n8n). Funciona em qualquer hospedagem.
 - **`onboarding-novos-dex`** é protegida por senha no WordPress. A cópia mostra o
   mesmo formulário de senha, que valida no site original.
+- **"Form - visita" do Elementor (`7c90bc7`)**, que no WordPress só mandava
+  e-mail: continua como estava (envia para o WordPress e falha fora dele).
 - **Tags de rastreamento** (Google Tag Manager, Meta Pixel) foram mantidas
   como estão no original.
 
