@@ -350,6 +350,11 @@ def main(argv: list[str]) -> int:
             if wanted and page["slug"] not in wanted and page["source"].strip("/") not in wanted:
                 continue
             clone_page(page)
+        # Liga de novo os formulários WordPress das cópias ao /api/enviar
+        # (tools/localize_forms.py; sem isso eles voltariam a depender do WordPress).
+        import localize_forms
+        localize_forms.main([p["slug"] for p in PAGES
+                             if not wanted or p["slug"] in wanted or p["source"].strip("/") in wanted])
     if _failed:
         print("\nFalhas:", *_failed, sep="\n  ")
     return 0
