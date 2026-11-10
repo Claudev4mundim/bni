@@ -44,6 +44,12 @@ const TIMEOUT_MS = 10000;
 
 /* ---------- utilidades ---------- */
 
+// Impressão digital curta da LP_WEBHOOKS (SHA-256, 12 caracteres): só para
+// conferir, na simulação, que a variável salva na Vercel é a esperada.
+function configHash() {
+  return crypto.createHash("sha256").update(process.env.LP_WEBHOOKS || "").digest("hex").slice(0, 12);
+}
+
 function webhooks() {
   try {
     return JSON.parse(process.env.LP_WEBHOOKS || "{}");
@@ -379,7 +385,7 @@ module.exports = async function handler(req, res) {
       return reply(res, 503, { ok: false, message: "Não foi possível enviar agora. Tente novamente em instantes." });
     }
     if (dry) {
-      return reply(res, 200, { ...done, dryRun: true,
+      return reply(res, 200, { ...done, dryRun: true, config: configHash(),
         requests: reqs.map((r) => ({ name: r.name, to: r.url ? mask(r.url) : "(sem URL em LP_WEBHOOKS)",
           method: r.method, headers: r.headers, body: r.body })) });
     }
@@ -406,7 +412,7 @@ module.exports = async function handler(req, res) {
   };
   const done = { ok: true, message: form.messages.success, redirect: form.redirect || "" };
   if (dry) {
-    return reply(res, 200, { ...done, dryRun: true,
+    return reply(res, 200, { ...done, dryRun: true, config: configHash(),
       requests: [{ name: form.form_name, to: hook.url ? mask(hook.url) : "(sem URL em LP_WEBHOOKS)", ...request }] });
   }
   if (!hook.url) {
