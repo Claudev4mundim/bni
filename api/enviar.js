@@ -46,17 +46,23 @@ const TIMEOUT_MS = 10000;
 
 // Impressão digital curta da LP_WEBHOOKS (SHA-256, 12 caracteres): só para
 // conferir, na simulação, que a variável salva na Vercel é a esperada.
-function configHash() {
-  return crypto.createHash("sha256").update(process.env.LP_WEBHOOKS || "").digest("hex").slice(0, 12);
+function configHash(name = "LP_WEBHOOKS") {
+  return crypto.createHash("sha256").update(process.env[name] || "").digest("hex").slice(0, 12);
 }
 
+// LP_WEBHOOKS: webhooks dos formulários vindos do WordPress (build_config.py).
+// LP_WEBHOOKS_EXTRA: webhooks das LPs derivadas (derive_pages.py), separados
+// para não precisar regravar os segredos antigos a cada LP nova.
 function webhooks() {
-  try {
-    return JSON.parse(process.env.LP_WEBHOOKS || "{}");
-  } catch (e) {
-    console.error("LP_WEBHOOKS inválida:", e.message);
-    return {};
+  const all = {};
+  for (const name of ["LP_WEBHOOKS", "LP_WEBHOOKS_EXTRA"]) {
+    try {
+      Object.assign(all, JSON.parse(process.env[name] || "{}"));
+    } catch (e) {
+      console.error(`${name} inválida:`, e.message);
+    }
   }
+  return all;
 }
 
 // sanitize_text_field do WordPress: tira tags, quebras de linha, tabs,
@@ -385,7 +391,7 @@ module.exports = async function handler(req, res) {
       return reply(res, 503, { ok: false, message: "Não foi possível enviar agora. Tente novamente em instantes." });
     }
     if (dry) {
-      return reply(res, 200, { ...done, dryRun: true, config: configHash(),
+      return reply(res, 200, { ...done, dryRun: true, config: configHash(), config_extra: configHash("LP_WEBHOOKS_EXTRA"),
         requests: reqs.map((r) => ({ name: r.name, to: r.url ? mask(r.url) : "(sem URL em LP_WEBHOOKS)",
           method: r.method, headers: r.headers, body: r.body })) });
     }
@@ -412,7 +418,7 @@ module.exports = async function handler(req, res) {
   };
   const done = { ok: true, message: form.messages.success, redirect: form.redirect || "" };
   if (dry) {
-    return reply(res, 200, { ...done, dryRun: true, config: configHash(),
+    return reply(res, 200, { ...done, dryRun: true, config: configHash(), config_extra: configHash("LP_WEBHOOKS_EXTRA"),
       requests: [{ name: form.form_name, to: hook.url ? mask(hook.url) : "(sem URL em LP_WEBHOOKS)", ...request }] });
   }
   if (!hook.url) {

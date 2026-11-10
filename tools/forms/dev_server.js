@@ -20,6 +20,8 @@ const path = require("node:path");
 const ROOT = path.resolve(__dirname, "..", "..");
 const CAPTURES = path.join(__dirname, "capturas.jsonl");
 const secrets = JSON.parse(fs.readFileSync(path.join(__dirname, "webhooks.secret.json"), "utf8"));
+const extraFile = path.join(__dirname, "webhooks.extra.secret.json");
+if (fs.existsSync(extraFile)) Object.assign(secrets, JSON.parse(fs.readFileSync(extraFile, "utf8")));
 const local = {};
 for (const [ref, v] of Object.entries(secrets)) local[ref] = { url: `http://127.0.0.1:9900/${ref}`, secret: v.secret };
 process.env.LP_WEBHOOKS = JSON.stringify(local);

@@ -2140,6 +2140,184 @@
     "redirect": "",
     "message": "<p>Obrigado por nos contatar! Entraremos em contato em breve.</p>"
    }
+  },
+  "elementor:lp-regional-montesclaros:d7b5a52": {
+   "kind": "elementor",
+   "page": "lp-regional-montesclaros",
+   "form_id": "d7b5a52",
+   "form_name": "LP Montes Claros",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Nome",
+     "required": true
+    },
+    {
+     "id": "field_d637b34",
+     "type": "tel",
+     "label": "Telefone",
+     "required": true
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true
+    },
+    {
+     "id": "field_30c7c87",
+     "type": "text",
+     "label": "Cidade",
+     "required": true
+    },
+    {
+     "id": "field_6502370",
+     "type": "select",
+     "label": "Estado (UF)",
+     "required": true
+    },
+    {
+     "id": "field_1ef7f89",
+     "type": "text",
+     "label": "Atuação",
+     "required": false
+    },
+    {
+     "id": "field_7412441",
+     "type": "acceptance",
+     "label": "LGPD",
+     "required": true
+    },
+    {
+     "id": "utm_source",
+     "type": "hidden",
+     "label": "utm_source",
+     "required": false
+    },
+    {
+     "id": "utm_campaign",
+     "type": "hidden",
+     "label": "utm_campaign",
+     "required": false
+    },
+    {
+     "id": "utm_term",
+     "type": "hidden",
+     "label": "utm_term",
+     "required": false
+    },
+    {
+     "id": "utm_medium",
+     "type": "hidden",
+     "label": "utm_medium",
+     "required": false
+    },
+    {
+     "id": "utm_name",
+     "type": "hidden",
+     "label": "utm_name",
+     "required": false
+    }
+   ],
+   "webhook": "wh_n8n_montesclaros",
+   "redirect": "https://lp.bnibrasil.net.br/obrigado-pelo-cadastro-tm",
+   "messages": {
+    "success": "Formulário enviado com sucesso!",
+    "error": "Envio falhou por erro do servidor.",
+    "server": "Erro no envio. Tente novamente mais tarde.",
+    "required": "This field is required."
+   },
+   "derived_from": "elementor:281498:d7b5a52"
+  },
+  "elementor:lp-regional-salvador:d7b5a52": {
+   "kind": "elementor",
+   "page": "lp-regional-salvador",
+   "form_id": "d7b5a52",
+   "form_name": "LP Salvador",
+   "fields": [
+    {
+     "id": "name",
+     "type": "text",
+     "label": "Nome",
+     "required": true
+    },
+    {
+     "id": "field_d637b34",
+     "type": "tel",
+     "label": "Telefone",
+     "required": true
+    },
+    {
+     "id": "email",
+     "type": "email",
+     "label": "Email",
+     "required": true
+    },
+    {
+     "id": "field_30c7c87",
+     "type": "text",
+     "label": "Cidade",
+     "required": true
+    },
+    {
+     "id": "field_6502370",
+     "type": "select",
+     "label": "Estado (UF)",
+     "required": true
+    },
+    {
+     "id": "field_1ef7f89",
+     "type": "text",
+     "label": "Atuação",
+     "required": false
+    },
+    {
+     "id": "field_7412441",
+     "type": "acceptance",
+     "label": "LGPD",
+     "required": true
+    },
+    {
+     "id": "utm_source",
+     "type": "hidden",
+     "label": "utm_source",
+     "required": false
+    },
+    {
+     "id": "utm_campaign",
+     "type": "hidden",
+     "label": "utm_campaign",
+     "required": false
+    },
+    {
+     "id": "utm_term",
+     "type": "hidden",
+     "label": "utm_term",
+     "required": false
+    },
+    {
+     "id": "utm_medium",
+     "type": "hidden",
+     "label": "utm_medium",
+     "required": false
+    },
+    {
+     "id": "utm_name",
+     "type": "hidden",
+     "label": "utm_name",
+     "required": false
+    }
+   ],
+   "webhook": "wh_n8n_salvador",
+   "redirect": "https://lp.bnibrasil.net.br/obrigado-pelo-cadastro-tm",
+   "messages": {
+    "success": "Formulário enviado com sucesso!",
+    "error": "Envio falhou por erro do servidor.",
+    "server": "Erro no envio. Tente novamente mais tarde.",
+    "required": "This field is required."
+   },
+   "derived_from": "elementor:281498:d7b5a52"
   }
  }
 }

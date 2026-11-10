@@ -1,4 +1,5 @@
 __pycache__/
 # URLs e segredos dos webhooks (vão só para a variável LP_WEBHOOKS da Vercel)
 tools/forms/webhooks.secret.json
+tools/forms/webhooks.extra.secret.json
 tools/forms/capturas.jsonl

@@ -36,7 +36,8 @@ WP = "https://landing.bnibrasil.com.br"
 MCP = f"{WP}/wp-json/mcp/emcp-tools-server"
 
 with open(os.path.join(ROOT, "pages.json"), encoding="utf-8") as fh:
-    PAGES = [p for g in json.load(fh)["groups"] for p in g["pages"]]
+    # Só as páginas que existem no WordPress (as derivadas não têm "source").
+    PAGES = [p for g in json.load(fh)["groups"] for p in g["pages"] if p.get("source")]
 
 
 def curl(args: list[str]) -> str:
@@ -204,6 +205,14 @@ def main() -> int:
     secret_path = os.path.join(ROOT, "tools", "forms", "webhooks.secret.json")
     with open(secret_path, "w", encoding="utf-8") as fh:
         json.dump(secrets, fh, ensure_ascii=False, indent=1)
+    # LPs derivadas (cópias com outro endereço): configuração a partir da LP de origem.
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("derive_pages", os.path.join(ROOT, "tools", "derive_pages.py"))
+    derive = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(derive)
+    derive.main()
+    with open(os.path.join(ROOT, "api", "_forms.json"), encoding="utf-8") as fh:
+        config = json.load(fh)
     for key, f in config["forms"].items():
         n = len(f["webhooks"]) if f["kind"] == "wpforms" else 1
         print(f"{key:40s} {f.get('form_name') or f.get('title')}  ({n} webhook{'s' if n > 1 else ''})")
