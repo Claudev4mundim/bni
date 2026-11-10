@@ -133,6 +133,21 @@ O HTML e o visual são os originais. Só o envio mudou: em vez do
   saíam vazios) agora levam os valores reais da URL; a localização
   (`{entry_geolocation}`) vem da Vercel no formato "Cidade, UF, BR".
 
+**Teste real (10/11/2026, 17:34 UTC):** 13 envios marcados "TESTE CLAUDE -
+apagar" (e-mail `teste.claude@example.com`, telefone inexistente
+`(11) 0000-0000`, `utm_source=teste-claude`), um por webhook. Responderam 200:
+os 6 do Elementor, "N8N dna 11 - Atualiza planilha v4" e "N8n Elevenmind" do
+V4 Completo, Social SP (`fluxobniappcenter`), V4 WhatsApp e as 3 Coletas CX.
+**Responderam 404, porque o webhook não está mais registrado no n8n** (já
+estavam quebrados no WordPress, que usa as mesmas URLs):
+
+- "DEX" do Formulário V4 Completo (`webhook.v4mundim.com`, `…/recive-form-bni-to-dex`);
+- "BNISP1" de rafa1, v401 e especialdenatal (`n8n.apps.dna11.com.br`, `…/landingpage`).
+
+Os leads desses formulários chegam aos outros webhooks; o do BNISP1 não chega a
+lugar nenhum enquanto o fluxo não for reativado (ou trocado no WordPress e em
+`tools/forms/build_config.py`).
+
 **Testar sem enviar nada aos webhooks reais**
 
 ```bash
